@@ -1,0 +1,2936 @@
+{
+  "schemaVersion": 1,
+  "title": "TINNOX SWMS Activity Library",
+  "format": {
+    "pageSize": "A4",
+    "orientation": "landscape",
+    "fontFamily": "Arial",
+    "fontSizePt": 9.5,
+    "lineHeightPt": 12,
+    "startEachSectionOnNewPage": true,
+    "allowContinuationPages": true,
+    "bulletMarker": "disc"
+  },
+  "sections": [
+    {
+      "id": "risk",
+      "title": "Risk matrix, high-risk work & PPE",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "paragraphs": [
+          {
+            "text": "Diving Work",
+            "style": "compact"
+          },
+          {
+            "text": "Demolition",
+            "style": "compact"
+          },
+          {
+            "text": "Asbestos",
+            "style": "compact"
+          },
+          {
+            "text": "Working at depths greater than 1.5 Metres, including tunnels or mines",
+            "style": "compact"
+          },
+          {
+            "text": "Work in an area that may have a contaminated or flammable atmosphere",
+            "style": "compact"
+          },
+          {
+            "text": "Confined Spaces",
+            "style": "compact"
+          },
+          {
+            "text": "Using explosives",
+            "style": "compact"
+          },
+          {
+            "text": "Mobile Plant",
+            "style": "compact"
+          },
+          {
+            "text": "Pressurised gas distribution mains or piping chemical, fuel or refrigerant lines energised electrical installations or services",
+            "style": "compact"
+          },
+          {
+            "text": "Structures or buildings involving structural alterations or repairs that require temporary support to prevent collapse",
+            "style": "compact"
+          },
+          {
+            "text": "Involves a risk of a person falling more than 2m, including work on telecommunications towers",
+            "style": "compact"
+          },
+          {
+            "text": "Work carried out adjacent to a road, railway or shipping lane, traffic corridor",
+            "style": "compact"
+          },
+          {
+            "text": "In or near water or other liquid that involves risk of drowning",
+            "style": "compact"
+          },
+          {
+            "text": "Artificial extremes of temperature",
+            "style": "compact"
+          },
+          {
+            "text": "Tilt up or pre-cast concrete",
+            "style": "compact"
+          }
+        ],
+        "figures": [
+          "risk-diagram",
+          "ppe-diagram"
+        ],
+        "heading": "THIS WORK ACTIVITY INVOLVES THE FOLLOWING “HIGH RISK CONSTRUCTION WORK”"
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "planning",
+      "title": "1–2. Planning, preparation & training",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "1. Planning & preparation",
+            "hazard": "Lack of consultation may lead to potential outcomes for personal injury, property damage &/or environmental incident.",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Liaise with Principal Contractor to establish the following on-site systems and procedures are in place and take note of:",
+                "style": "body"
+              },
+              {
+                "text": "Health and Safety rules",
+                "style": "bullet"
+              },
+              {
+                "text": "Induction for all workers – site specific and toolbox meetings",
+                "style": "bullet"
+              },
+              {
+                "text": "Supervisory arrangements",
+                "style": "bullet"
+              },
+              {
+                "text": "Communication arrangements",
+                "style": "bullet"
+              },
+              {
+                "text": "All relevant workers are appraised for required competencies & for any pre-existing medical conditions if working in remote or isolated locations.",
+                "style": "bullet"
+              },
+              {
+                "text": "PPE required",
+                "style": "bullet"
+              },
+              {
+                "text": "Site plans – showing no go zones for pedestrians",
+                "style": "bullet"
+              },
+              {
+                "text": "Traffic Management Plan",
+                "style": "bullet"
+              },
+              {
+                "text": "Exclusion Zones",
+                "style": "bullet"
+              },
+              {
+                "text": "Risk Assessments",
+                "style": "bullet"
+              },
+              {
+                "text": "SWMS and JSA’s",
+                "style": "bullet"
+              },
+              {
+                "text": "Injury reporting procedures",
+                "style": "bullet"
+              },
+              {
+                "text": "Hazard reporting procedures.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 3
+          },
+          {
+            "job": "",
+            "hazard": "Working alone",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "A ‘Buddy’ system is utilised for high-risk tasks undertaken in remote locations or working in isolation.",
+                "style": "body"
+              },
+              {
+                "text": "A procedure is developed and in place for regular contact with people working remotely or in isolation, The procedure should identify:",
+                "style": "body"
+              },
+              {
+                "text": "Travel itineraries, locations, scheduled contact persons and times",
+                "style": "bullet"
+              },
+              {
+                "text": "Sufficient supplies of water, food, fuel & supplies needed",
+                "style": "bullet"
+              },
+              {
+                "text": "An emergency response",
+                "style": "bullet"
+              },
+              {
+                "text": "Appropriate Vehicles",
+                "style": "bullet"
+              },
+              {
+                "text": "Safety equipment including first aid.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 3
+          },
+          {
+            "job": "2. Training and Capabilities",
+            "hazard": "Lack of training or the assessment of capability may lead to personal injury, property damage &/or environmental incident.",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "If working on EWPs or scaffolding, for this task, ensure there are separate, dedicated EWP/Scaffolding SWMS and that all workers/employees have relevant training and licensing.",
+                "style": "body"
+              },
+              {
+                "text": "Ensure all relevant workers have undertaken training and/or received instruction in the use of control measures. Include:",
+                "style": "body"
+              },
+              {
+                "text": "Reporting procedures for incidents",
+                "style": "bullet"
+              },
+              {
+                "text": "Construction sites - General Construction Induction Card (white card)",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct use of equipment including selecting, fitting, use, care of and maintenance",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct use of all tools used",
+                "style": "bullet"
+              },
+              {
+                "text": "Use of supervision where required (e.g. new starters or new equipment)",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure supervisors, foremen etc. are suitably experienced in the type work to be conducted",
+                "style": "bullet"
+              },
+              {
+                "text": "All workers are trained in this SWMS.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 3
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "site",
+      "title": "3. Assess onsite conditions",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "3. Assess onsite conditions",
+            "hazard": "Lack of a clear assessment may lead to personal injury, property damage &/or environmental incident.",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Assess conditions at site on arrival. Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Ensure site-specific induction is undertaken (include location of amenities, first aid facilities, emergency plans and evacuation points, incident reporting, communication, contact persons etc.)",
+                "style": "bullet"
+              },
+              {
+                "text": "Assess mobile phone reception (alternative emergency communications procedures in place if no reception available)",
+                "style": "bullet"
+              },
+              {
+                "text": "Work site is exactly as detailed in Terms of Agreement or contract",
+                "style": "bullet"
+              },
+              {
+                "text": "Suitable access for all equipment required",
+                "style": "bullet"
+              },
+              {
+                "text": "Suitable space for operation of equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Suitable lighting, including night-works (include flood lighting and operator head lamps as applicable).",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure design suitable for location. Consider:",
+                "style": "body"
+              },
+              {
+                "text": "Structural integrity of dwelling",
+                "style": "bullet"
+              },
+              {
+                "text": "Council permits / approvals",
+                "style": "bullet"
+              },
+              {
+                "text": "Engineer’s instructions for structure / install",
+                "style": "bullet"
+              },
+              {
+                "text": "Likely environmental factors (high winds, extreme weather conditions, marine effects (corrosion), sunlight etc.",
+                "style": "bullet"
+              },
+              {
+                "text": "Conduct risk assessment to identify potential hazards such as:",
+                "style": "body"
+              },
+              {
+                "text": "Work at heights (above 2m)",
+                "style": "bullet"
+              },
+              {
+                "text": "Lighting",
+                "style": "bullet"
+              },
+              {
+                "text": "Ventilation",
+                "style": "bullet"
+              },
+              {
+                "text": "Dust",
+                "style": "bullet"
+              },
+              {
+                "text": "Presence of hazardous materials such as asbestos, lead, silica etc.",
+                "style": "bullet"
+              },
+              {
+                "text": "Location of existing services (heating, water, pipes, electrical leads)",
+                "style": "bullet"
+              },
+              {
+                "text": "Temperature etc.",
+                "style": "bullet"
+              },
+              {
+                "text": "Exposed electrical switchboards/power points",
+                "style": "bullet"
+              },
+              {
+                "text": "Duration of manual handling tasks (such as working with arms above shoulder height).",
+                "style": "bullet"
+              },
+              {
+                "text": "Load bearing capacity of support walls, ceiling, and roof.",
+                "style": "bullet"
+              },
+              {
+                "text": "For existing premises, assess:",
+                "style": "body"
+              },
+              {
+                "text": "Presence of potentially aggressive persons or dangerous animals",
+                "style": "bullet"
+              },
+              {
+                "text": "Presence of asbestos and/or lead/lead based paints",
+                "style": "bullet"
+              },
+              {
+                "text": "Presence of concrete (silica dust)",
+                "style": "bullet"
+              },
+              {
+                "text": "Condition of electrical wiring",
+                "style": "bullet"
+              },
+              {
+                "text": "Structural integrity/age of dwelling",
+                "style": "bullet"
+              },
+              {
+                "text": "Maintenance condition",
+                "style": "bullet"
+              },
+              {
+                "text": "Space to conduct work and access/egress points",
+                "style": "bullet"
+              },
+              {
+                "text": "Existing lighting",
+                "style": "bullet"
+              },
+              {
+                "text": "Disposal requirements for materials (example: lead and asbestos containing materials).",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 4
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "materials",
+      "title": "4. Materials delivery & handling",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "4. Materials delivery",
+            "hazard": "Contact with mobile plant or passing vehicle",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Park working vehicle in driveway or allocated parking to avoid travelling across roads when delivery working equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Erect any barriers & signage necessary to keep others safe and aware as required.",
+                "style": "bullet"
+              },
+              {
+                "text": "Check constantly for changing hazards while working and monitor work position at all times.",
+                "style": "body"
+              },
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "High visibility clothing worn at all times",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not stand behind reversing vehicles",
+                "style": "bullet"
+              },
+              {
+                "text": "Allow sufficient distance from plant during operation (allow sufficient room for equipment failure – such as arm/boom failure or plant rollover)",
+                "style": "bullet"
+              },
+              {
+                "text": "No work is conducted in established “no go zones” for pedestrians",
+                "style": "bullet"
+              },
+              {
+                "text": "Alertness at all times. Listen for:",
+                "style": "bullet"
+              },
+              {
+                "text": "Reversing alarms/beepers",
+                "style": "subbullet"
+              },
+              {
+                "text": "Calls from Plant Operators",
+                "style": "subbullet"
+              },
+              {
+                "text": "Safety/warning signs, Spotters, traffic barriers etc. must be obeyed as required",
+                "style": "bullet"
+              },
+              {
+                "text": "Work positions should be in clear sight of plant operators",
+                "style": "bullet"
+              },
+              {
+                "text": "Follow traffic management plan requirements.",
+                "style": "bullet"
+              },
+              {
+                "text": "NOTE: Some traffic management plans may say that pedestrians have right-of-way. Never assume this. Make visual and verbal contact with plant operator as required.",
+                "style": "body"
+              }
+            ],
+            "sourcePage": 5
+          },
+          {
+            "job": "",
+            "hazard": "Muscular stress / musculoskeletal disorder (MSD)",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Suitable transport vehicle, e.g. van",
+                "style": "bullet"
+              },
+              {
+                "text": "Transfer AV components and equipment using mechanical aids e.g. trolleys:",
+                "style": "bullet"
+              },
+              {
+                "text": "Push rather than pull the aid",
+                "style": "subbullet"
+              },
+              {
+                "text": "Do not pull large loads towards yourself",
+                "style": "subbullet"
+              },
+              {
+                "text": "Do not jerk to get the aid moving",
+                "style": "subbullet"
+              },
+              {
+                "text": "Seek assistance if the load is too heavy or break down the load to make it lighter",
+                "style": "subbullet"
+              },
+              {
+                "text": "Never try to move or push a loaded aid or skid by hand",
+                "style": "subbullet"
+              },
+              {
+                "text": "Use proper lifting techniques when loading and unloading",
+                "style": "subbullet"
+              },
+              {
+                "text": "When going down an incline push, don't pull",
+                "style": "subbullet"
+              }
+            ],
+            "sourcePage": 5
+          },
+          {
+            "job": "",
+            "hazard": "",
+            "ir": "",
+            "rr": "",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Where persons are required to lift without lifting aids, ensure:",
+                "style": "bullet"
+              },
+              {
+                "text": "Lift within physical capabilities of individual",
+                "style": "subbullet"
+              },
+              {
+                "text": "Weight of object is known; avoid lifting loads more than 16 – 20kg.",
+                "style": "subbullet"
+              },
+              {
+                "text": "Extreme force will not be required",
+                "style": "subbullet"
+              },
+              {
+                "text": "Object can be held close to body (this excludes large/bulky items that are difficult to grasp)",
+                "style": "subbullet"
+              },
+              {
+                "text": "Flat, even floor surface, short travel distance with no obstructions",
+                "style": "subbullet"
+              },
+              {
+                "text": "Objects to be lifted are in suitable condition (dry, stable, even distribution of weight, handles where possible, allows good grip, will not block vision, no sharp edges, containers sealed)",
+                "style": "subbullet"
+              },
+              {
+                "text": "Objects will not be lifted up/down ladders",
+                "style": "subbullet"
+              },
+              {
+                "text": "Suitable personal protective equipment (PPE) provided (example: snug-fitting furniture removalist gloves, safety shoes with non-slip soles)",
+                "style": "subbullet"
+              },
+              {
+                "text": "Where Team Handling required. Ensure:",
+                "style": "bullet"
+              },
+              {
+                "text": "All members of team-lift are matched in size, skills, capabilities",
+                "style": "subbullet"
+              },
+              {
+                "text": "Number of persons proportionate to weight of load and level of difficulty",
+                "style": "subbullet"
+              },
+              {
+                "text": "Lifts are planned and rehearsed",
+                "style": "subbullet"
+              },
+              {
+                "text": "Person allocated to plan and be in charge of lift – all others to know their roles",
+                "style": "subbullet"
+              },
+              {
+                "text": "Sufficient space to maneuver",
+                "style": "subbullet"
+              },
+              {
+                "text": "Use aids where possible (lifting bars, handles etc.)",
+                "style": "subbullet"
+              }
+            ],
+            "sourcePage": 6
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "setup",
+      "title": "5. Work area set-up",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "5. Work area set up",
+            "hazard": "Contact with utilities",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Locate:",
+                "style": "body"
+              },
+              {
+                "text": "Any electrical cabling, gas pipes, water pipes, air conditioning ducts etc. prior to work commencing",
+                "style": "bullet"
+              },
+              {
+                "text": "Map location of electrical cabling when considering in-wall drilling and running of wires / cables",
+                "style": "bullet"
+              },
+              {
+                "text": "If having to access ceiling space turn off power and inspect ceiling space prior to entering.",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not enter ceiling space if working alone.",
+                "style": "heading"
+              }
+            ],
+            "sourcePage": 6
+          },
+          {
+            "job": "",
+            "hazard": "Muscular stress / musculoskeletal disorder (MSD)",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure materials / equipment is as close to work area as possible",
+                "style": "bullet"
+              },
+              {
+                "text": "Assemble AV components on the ground",
+                "style": "bullet"
+              },
+              {
+                "text": "Use hand trucks, cable trolleys to position components",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure there are sufficient persons for task.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          },
+          {
+            "job": "",
+            "hazard": "Slip, trip and falls on same level",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure area is kept clear of packaging, tools or other debris to prevent tripping/slipping.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          },
+          {
+            "job": "",
+            "hazard": "Property damage",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure equipment is not placed in areas where they may be run over, damaged or exposed to water (unless rated for wet environments). Keep power leads up off the ground and out of the way.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          },
+          {
+            "job": "",
+            "hazard": "Contact with electricity",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure arrangements for shut down, Lock out and Tag is in place prior to commencement of work. Confirmation of clearance to work must be provided, in writing to all relevant persons prior to work commencing.",
+                "style": "bullet"
+              },
+              {
+                "text": "All power tools and leads are Tested and Tagged and are current",
+                "style": "bullet"
+              },
+              {
+                "text": "Pre-inspect equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "If equipment is damaged, do not use. Take out of service, apply Lock-out/tag-out (LOTO) procedures and inform supervisor immediately.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          },
+          {
+            "job": "",
+            "hazard": "Contact with hazardous chemicals / substances",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure current Material/Safety Data Sheets (M/SDS) are obtained for all hazardous chemicals/substances and accessible on site.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "mount",
+      "title": "6. Brackets, rails & wiring",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "6. Mount brackets, mounting",
+            "hazard": "Hazardous manual tasks - MSD",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure persons do not work in awkward postures (such as hands raised above head, bending and twisting etc.) for more than 30 minutes at a time or 2 hours over entire shift.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          },
+          {
+            "job": "rails and run wires as required",
+            "hazard": "Slips, trips, falls causing injury",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Identify all hazards. Consider:",
+                "style": "body"
+              },
+              {
+                "text": "Ground/floor surface condition",
+                "style": "bullet"
+              },
+              {
+                "text": "Where ground surfaces may change level",
+                "style": "bullet"
+              },
+              {
+                "text": "Check design to ensure that the equipment will support a specified load – or ‘duty rating’. This must be clearly stated on the item",
+                "style": "bullet"
+              },
+              {
+                "text": "Weather conditions (rain, wind loads, fog, dew)",
+                "style": "bullet"
+              },
+              {
+                "text": "Experience of workers",
+                "style": "bullet"
+              },
+              {
+                "text": "Use all height-access equipment as per manufacturer’s instructions and for its designed purpose.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 7
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "height",
+      "title": "6. Height-access equipment",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "",
+            "hazard": "Falls from height access equipment",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure suitable equipment for job. Examples:",
+                "style": "body"
+              },
+              {
+                "text": "Ensure EWP or step platforms or mobile scaffolds are used",
+                "style": "bullet"
+              },
+              {
+                "text": "If ladders are only option, ensure they are industrial, good condition, set-up correctly and secured both top and bottom.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 8
+          },
+          {
+            "job": "",
+            "hazard": "Fall from ladder",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Work positioning. Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Load rating of at least 120kg",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct size and length for job",
+                "style": "bullet"
+              },
+              {
+                "text": "No damage, clean and dry",
+                "style": "bullet"
+              },
+              {
+                "text": "Secured to work site (base and top)",
+                "style": "bullet"
+              },
+              {
+                "text": "Metallic, wire- reinforced or conductive ladders should be avoided around live electrical equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Face ladder when ascending/descending. Ensure 3 points of contact remain on ladder at all times",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure only 1 person working from each ladder.",
+                "style": "bullet"
+              },
+              {
+                "text": "DO NOT:",
+                "style": "body"
+              },
+              {
+                "text": "Attempt to move or extend ladder when on it",
+                "style": "bullet"
+              },
+              {
+                "text": "Slide down stiles",
+                "style": "bullet"
+              },
+              {
+                "text": "Step up or down two or more rungs at a time",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 8
+          },
+          {
+            "job": "",
+            "hazard": "Fall from platform ladder",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Trestle back undamaged",
+                "style": "bullet"
+              },
+              {
+                "text": "If unfolding type, chains, rivets etc. are undamaged and functional",
+                "style": "bullet"
+              },
+              {
+                "text": "Suitable height hand rail (900mm)",
+                "style": "bullet"
+              },
+              {
+                "text": "Triangular flat plate bracing",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct size for job (platform level)",
+                "style": "bullet"
+              },
+              {
+                "text": "Non-slip treads",
+                "style": "bullet"
+              },
+              {
+                "text": "Large feet with non-slip mouldings",
+                "style": "bullet"
+              },
+              {
+                "text": "Non-slip platform of sufficient strength for persons, tools and equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Industrial rating.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 8
+          },
+          {
+            "job": "",
+            "hazard": "Fall from trestle",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Trestles must:",
+                "style": "body"
+              },
+              {
+                "text": "Be rated for proposed weight and span",
+                "style": "bullet"
+              },
+              {
+                "text": "Have an overhang of at least 150 mm and not more than 250mm at each end and be “locked” together. Example - clamped near the centre span to prevent individual movement.",
+                "style": "bullet"
+              },
+              {
+                "text": "Have an unobstructed surface width of at least 450mm (two planks wide)",
+                "style": "bullet"
+              },
+              {
+                "text": "Must be matched pairs i.e. the rungs should be equivalent heights and spacing.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 8
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "asbestos",
+      "title": "6. Asbestos drilling",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "",
+            "hazard": "Exposure to hazardous materials - drilling asbestos",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Wear required PPE and respiratory protective equipment (RPE):",
+                "style": "body"
+              },
+              {
+                "text": "Inspection – P1 or P2 half face (can be either disposable or cartridge)",
+                "style": "bullet"
+              },
+              {
+                "text": "Sample removal / drilling – P1 or P2 half face (can be either disposable or cartridge).",
+                "style": "bullet"
+              },
+              {
+                "text": "Use a non-powered hand drill or low speed battery-powered drill where possible (do not use high speed drill). Battery powered drills should be fitted with a local exhaust ventilation (LEV) dust control hood wherever possible.",
+                "style": "body"
+              },
+              {
+                "text": "Floors or Vertical surfaces:",
+                "style": "body"
+              },
+              {
+                "text": "1. Identify drill point and cover with duct tape (if possible tape over exit point also)",
+                "style": "body"
+              },
+              {
+                "text": "2. Apply generous amount of gel to drill site and drill into material",
+                "style": "body"
+              },
+              {
+                "text": "3. On completion remove gel and material with damp rag and place into bags.",
+                "style": "body"
+              },
+              {
+                "text": "The following items are prohibited:",
+                "style": "body"
+              },
+              {
+                "text": "High speed power or pneumatic tools such as grinders or power saws",
+                "style": "bullet"
+              },
+              {
+                "text": "High pressure water cleaners",
+                "style": "bullet"
+              },
+              {
+                "text": "Brooms and brushes (unless these items are used for sealing purposes)",
+                "style": "bullet"
+              },
+              {
+                "text": "Compressed air.",
+                "style": "bullet"
+              },
+              {
+                "text": "Horizontal overhead drilling:",
+                "style": "body"
+              },
+              {
+                "text": "1. Identify drill point and cover with duct tape (if possible tape over exit point also)",
+                "style": "body"
+              },
+              {
+                "text": "2. Apply generous amount of gel to drill site",
+                "style": "body"
+              },
+              {
+                "text": "3. Drill hole into bottom of cup",
+                "style": "body"
+              },
+              {
+                "text": "4. Line inside of cup with gel",
+                "style": "body"
+              },
+              {
+                "text": "5. Place drill bit through cup (ensure drill bit long enough to pass through cup and material drilled)",
+                "style": "body"
+              },
+              {
+                "text": "6. Hold cup tightly against surface and drill hole",
+                "style": "body"
+              },
+              {
+                "text": "7. On completion remove cup and wipe clean surface with damp rag",
+                "style": "body"
+              },
+              {
+                "text": "8. Use damp rags to clean off the paste and debris from the drill bit",
+                "style": "body"
+              },
+              {
+                "text": "9. Place cup and rags into appropriate bags for disposal.",
+                "style": "body"
+              }
+            ],
+            "sourcePage": 9
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "ceiling",
+      "title": "7. Ceiling space / underfloor",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "7. Working in ceiling space/ under floor",
+            "hazard": "Heat stress",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Assess heat level and provide sufficient ventilation (such as exhaust or fans)",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure sufficient drinking water",
+                "style": "bullet"
+              },
+              {
+                "text": "Cease work if temperatures are deemed too high for safe work",
+                "style": "bullet"
+              },
+              {
+                "text": "Limit time in the roof space to a short period. You should not spend more than 20 minutes in the roof space, before taking at least a 10-minute break in a cool area",
+                "style": "bullet"
+              },
+              {
+                "text": "If physically distressed, do not re-enter the roof space.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 9
+          },
+          {
+            "job": "",
+            "hazard": "Contact with electricity",
+            "ir": "",
+            "rr": "",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Locate and maintain awareness of any electrical cables while working",
+                "style": "bullet"
+              },
+              {
+                "text": "Be aware of metallic conduits or other coverings and, damaged or exposed wiring.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 10
+          },
+          {
+            "job": "",
+            "hazard": "Falls from Height",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Identify location of joists. Consider installation of joist locators. Ensure joists can support weight of installers (seek advice from competent persons)",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure a board of suitable strength is available for the worker to span at least 2 joists",
+                "style": "bullet"
+              },
+              {
+                "text": "Maintain constant contact with someone outside the roof cavity",
+                "style": "bullet"
+              },
+              {
+                "text": "Step on roof beams only – not the ceiling",
+                "style": "bullet"
+              },
+              {
+                "text": "Use crawl boards to span beams where appropriate",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure sufficient lighting for task.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 10
+          },
+          {
+            "job": "",
+            "hazard": "Hazardous materials ingestion inhalation",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Wear a head-covering and goggles, to avoid eye irritation",
+                "style": "bullet"
+              },
+              {
+                "text": "Long-sleeved clothing and gloves, to minimise skin irritation",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure disposable dust masks are worn",
+                "style": "bullet"
+              },
+              {
+                "text": "Handle insulation with care to minimise the release of fibers & dust",
+                "style": "bullet"
+              },
+              {
+                "text": "Presence of asbestos containing materials (ACM) - provide suitable PPE for short term works – example:",
+                "style": "bullet"
+              },
+              {
+                "text": "Non-Friable Asbestos: Protective clothing, P1 or P2 half face (can be either disposable or cartridge)",
+                "style": "subbullet"
+              },
+              {
+                "text": "Silica: P1 or 2 half face with particle cartridge.",
+                "style": "subbullet"
+              }
+            ],
+            "sourcePage": 10
+          },
+          {
+            "job": "",
+            "hazard": "Contact with Vermin",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "If accumulation of droppings/dead vermin present:",
+                "style": "body"
+              },
+              {
+                "text": "Wear a respirator that can filter particles as small as 0.3 microns",
+                "style": "bullet"
+              },
+              {
+                "text": "Wear disposable protective gloves, hat, coveralls and shoe coverings.",
+                "style": "bullet"
+              },
+              {
+                "text": "If removal of droppings/dead animal is required:",
+                "style": "body"
+              },
+              {
+                "text": "Wear PPE as above",
+                "style": "bullet"
+              },
+              {
+                "text": "Moisten the droppings with a light mist of water to keep spores from becoming airborne",
+                "style": "bullet"
+              },
+              {
+                "text": "Place droppings/dead animal into sealed plastic garbage bags",
+                "style": "bullet"
+              },
+              {
+                "text": "On completion (while still wearing the respirator), remove protective clothing and place it in a plastic bag.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 10
+          },
+          {
+            "job": "",
+            "hazard": "Confrontation with a snake",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Do not make sudden movements",
+                "style": "bullet"
+              },
+              {
+                "text": "Back away slowly or stay still",
+                "style": "bullet"
+              },
+              {
+                "text": "Allow exit point for snake to escape, if possible",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not attack or attempt to harm snake.",
+                "style": "bullet"
+              },
+              {
+                "text": "EXIT the space and report to the supervisor / home owner",
+                "style": "bullet"
+              },
+              {
+                "text": "DO NOT enter the space until the snake has been removed.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          },
+          {
+            "job": "",
+            "hazard": "Fire",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure exits to enclosed spaces are not blocked during installation process",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not place material over down lights (can create fire hazard)",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure light recesses, down-lights and electrical appliances (such as fans, flues etc.) have sufficient clearances and are kept clear.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          },
+          {
+            "job": "",
+            "hazard": "Knee injury - bursitis / arthritis",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "When working on knees for prolonged periods ensure that knee pads are fitted",
+                "style": "bullet"
+              },
+              {
+                "text": "Make time to give your legs a break by periodically leaving the enclosed space to stand up, stretch and walk around.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          },
+          {
+            "job": "",
+            "hazard": "Muscular stress / musculoskeletal disorder (MSD)",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Only rest on kneeling boards – do not over-stretch",
+                "style": "bullet"
+              },
+              {
+                "text": "Avoid long periods of repetitive movements",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure sufficient persons for task - equipment/insulation passed to installer so they do not have to ascend/descend height equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Regular rest breaks are taken (especially if working in cramped spaces)",
+                "style": "bullet"
+              },
+              {
+                "text": "Rotate relevant worker tasks.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "tools",
+      "title": "8. Power & hand tools",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "8. Using power & hand tools",
+            "hazard": "Contact with electricity",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Use tools only for the purpose specified by the manufacturer",
+                "style": "bullet"
+              },
+              {
+                "text": "Use tools as per Safe Operating Procedures and/or operators manual",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure instruction manual accessible and read by all persons operating equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "Never carry electrical tools by power cord",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not use power cord to pull equipment from power socket",
+                "style": "bullet"
+              },
+              {
+                "text": "Unplug tool when not in use",
+                "style": "bullet"
+              },
+              {
+                "text": "Check for damage or faults regularly during operation. Examples, if excessive vibration occurs, stop using immediately.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          },
+          {
+            "job": "",
+            "hazard": "Fire / explosion",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Do not operate power tools in explosive atmospheres (i.e. presence of flammable liquids, gases or dust).",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 11
+          },
+          {
+            "job": "",
+            "hazard": "Cuts / lacerations",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Use gloves when handling blades or sharp items",
+                "style": "bullet"
+              },
+              {
+                "text": "Maintain visual contact with work piece / tools",
+                "style": "bullet"
+              },
+              {
+                "text": "Direct cuts away from body",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure grip and footing is secure",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure tools are not carried in pockets or clothing (use sheaths, tool belts, etc.)",
+                "style": "bullet"
+              },
+              {
+                "text": "Tool handles:",
+                "style": "bullet"
+              },
+              {
+                "text": "Non-slip, good grip",
+                "style": "subbullet"
+              },
+              {
+                "text": "No sharp edges",
+                "style": "subbullet"
+              },
+              {
+                "text": "Guards or stoppers",
+                "style": "subbullet"
+              },
+              {
+                "text": "Clean, grease-free grips/handles.",
+                "style": "subbullet"
+              },
+              {
+                "text": "If using knives ensure they are suitable for the task:",
+                "style": "body"
+              },
+              {
+                "text": "Correct size for user",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct size for task",
+                "style": "bullet"
+              },
+              {
+                "text": "Handle intact and non slip",
+                "style": "bullet"
+              },
+              {
+                "text": "Use smallest blade required for job",
+                "style": "bullet"
+              },
+              {
+                "text": "Stable and efficient at cutting required material",
+                "style": "bullet"
+              },
+              {
+                "text": "Ergonomic handle (no excessive bending of wrists or overly tight grip required)",
+                "style": "bullet"
+              },
+              {
+                "text": "Manufacturer’s instructions and warning labels have been read and understood",
+                "style": "bullet"
+              },
+              {
+                "text": "Extra knifes and /or blades are available to use.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 12
+          },
+          {
+            "job": "",
+            "hazard": "Noise",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Wear hearing protection, ensure it is:",
+                "style": "body"
+              },
+              {
+                "text": "Worn by all persons throughout the period of exposure to noise",
+                "style": "bullet"
+              },
+              {
+                "text": "Suitable for the type of working environment and the work tasks",
+                "style": "bullet"
+              },
+              {
+                "text": "Comfortable and correctly fitting for the worker",
+                "style": "bullet"
+              },
+              {
+                "text": "Regularly inspected and maintained to ensure it remains in good, clean condition.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 12
+          },
+          {
+            "job": "",
+            "hazard": "Muscular stress / MSD",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Avoid over reaching",
+                "style": "bullet"
+              },
+              {
+                "text": "Job rotation",
+                "style": "bullet"
+              },
+              {
+                "text": "Avoid any twisting, awkward positions and side-bending",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not use excessive force when operating power tools.",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure handles:",
+                "style": "bullet"
+              },
+              {
+                "text": "Are cylindrical and approx. 4cm in diameter",
+                "style": "subbullet"
+              },
+              {
+                "text": "Allow wrist to remain straight",
+                "style": "subbullet"
+              },
+              {
+                "text": "Comfortable grip",
+                "style": "subbullet"
+              },
+              {
+                "text": "No sharp edges",
+                "style": "subbullet"
+              },
+              {
+                "text": "Grip length approx. 12cm.",
+                "style": "subbullet"
+              }
+            ],
+            "sourcePage": 12
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "lifting",
+      "title": "9. Lifting & mounting AV components",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "9. Lifting & mounting AV components into position",
+            "hazard": "Hazardous manual tasks - MSD",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Provide adequate resources and controls. Examples:",
+                "style": "body"
+              },
+              {
+                "text": "Sufficient workers and time for task",
+                "style": "bullet"
+              },
+              {
+                "text": "Adequate rest breaks and recovery time",
+                "style": "bullet"
+              },
+              {
+                "text": "Lifting aids and equipment (cranes, vacuum lifters, genie lifts)",
+                "style": "bullet"
+              },
+              {
+                "text": "Specialised equipment such as spring/scissor trolleys, height adjustable pallet lifters with a turntable, etc.",
+                "style": "bullet"
+              },
+              {
+                "text": "Team-lifts, refer to step 4 Materials delivery and ensure:",
+                "style": "bullet"
+              },
+              {
+                "text": "Use aids where possible (lifting bars, handles etc.)",
+                "style": "subbullet"
+              },
+              {
+                "text": "If moving something up or down stairs, the taller person should be at the lower level.",
+                "style": "subbullet"
+              },
+              {
+                "text": "Where persons are required to lift without lifting aids, refer to step 4 Materials delivery.",
+                "style": "body"
+              }
+            ],
+            "sourcePage": 13
+          },
+          {
+            "job": "",
+            "hazard": "Slips, trips & falls",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure non slip shoes are worn",
+                "style": "bullet"
+              },
+              {
+                "text": "Ensure area is kept clear of packaging, tools or other debris to prevent tripping/slipping.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          },
+          {
+            "job": "",
+            "hazard": "Falling objects",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure materials are supported during installation",
+                "style": "bullet"
+              },
+              {
+                "text": "Use lanyards to pass tools to persons at height.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "testing",
+      "title": "10. Test AV equipment",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "10. Test AV equipment is functional",
+            "hazard": "Contact with electricity",
+            "ir": "4A",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "That no electrical appliances, light fittings, cables etc. have been damaged during installation",
+                "style": "bullet"
+              },
+              {
+                "text": "If damage suspected, do not turn power back on, seek advice from licensed electrician",
+                "style": "bullet"
+              },
+              {
+                "text": "Reconnect services as required. Notify homeowner and/or site supervisor.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "completion",
+      "title": "11. On completion",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "rows": [
+          {
+            "job": "11. On completion",
+            "hazard": "Slips, trips, falls causing injury",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Clean up tools and any waste ensuring the site is left in clean and tidy condition",
+                "style": "bullet"
+              },
+              {
+                "text": "Clean debris and ensure larger cut-offs are removed from area.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          },
+          {
+            "job": "",
+            "hazard": "Contact with electricity",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Disconnect power tool/extension leads from power point before winding up, so that you don’t get a shock if the lead is damaged",
+                "style": "bullet"
+              },
+              {
+                "text": "Inspect leads and power equipment for damage",
+                "style": "bullet"
+              },
+              {
+                "text": "If safe to do so, remove isolation locks/tags and test appliance for function.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          },
+          {
+            "job": "",
+            "hazard": "Contamination of waterways and water catchment",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Ensure:",
+                "style": "body"
+              },
+              {
+                "text": "Dispose of off-cut materials in bins provided onsite",
+                "style": "bullet"
+              },
+              {
+                "text": "Dispose of packaging in approved waste containers",
+                "style": "bullet"
+              },
+              {
+                "text": "Do not wash out tools or containers where residue can enter waterways/drains.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          },
+          {
+            "job": "",
+            "hazard": "Public safety",
+            "ir": "3H",
+            "rr": "2M",
+            "risks": [],
+            "controls": [
+              {
+                "text": "If acceptable, remove barricades, contact supervisor and return as agreed.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 13
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "emergency",
+      "title": "Emergency, training & reference register",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "paragraphs": [
+          {
+            "text": "EMERGENCY RESPONSE - CALL 000 IMMEDIATELY.",
+            "style": "heading"
+          },
+          {
+            "text": "If work is to be conducted on a construction site (or a site controlled by another Employer / PCBU) follow the site-specific Emergency Management Plan. Ensure:",
+            "style": "compact"
+          },
+          {
+            "text": "Adequate numbers of first aid trained staff are on site when working at heights occurs",
+            "style": "bullet"
+          },
+          {
+            "text": "First aiders are trained and competent in managing injuries until emergency services arrive",
+            "style": "bullet"
+          },
+          {
+            "text": "All rescue equipment is in good condition, available for use and in close proximity to the work site.",
+            "style": "bullet"
+          },
+          {
+            "text": "Ensure workers have access to:",
+            "style": "compact"
+          },
+          {
+            "text": "First aid kit/supplies",
+            "style": "bullet"
+          },
+          {
+            "text": "First Aid trained personnel familiar with Resuscitation and emergency response for electric shock",
+            "style": "bullet"
+          },
+          {
+            "text": "M/SDS",
+            "style": "bullet"
+          },
+          {
+            "text": "Communication devices (check mobile phones will have service in area)",
+            "style": "bullet"
+          },
+          {
+            "text": "Suitable fire protection equipment.",
+            "style": "bullet"
+          },
+          {
+            "text": "SAFE WORK METHOD STATEMENT (SWMS) PART 2",
+            "style": "heading"
+          },
+          {
+            "text": "FORMAL TRAINING, LICENCES REQUIRED FOR WORKERS",
+            "style": "compact"
+          },
+          {
+            "text": "UNDERTAKING THIS TASK:",
+            "style": "compact"
+          },
+          {
+            "text": "Delete or add as relevant",
+            "style": "compact"
+          },
+          {
+            "text": "Licence to Perform High Risk Work (operating certain",
+            "style": "compact"
+          },
+          {
+            "text": "plant, equipment)",
+            "style": "compact"
+          },
+          {
+            "text": "TAFE or other recognised training organisation",
+            "style": "compact"
+          },
+          {
+            "text": "Construction Induction Card (or equivalent)",
+            "style": "compact"
+          },
+          {
+            "text": "Competent in operation of make/model of plant",
+            "style": "compact"
+          },
+          {
+            "text": "Emergency procedures – emergency response",
+            "style": "compact"
+          },
+          {
+            "text": "PPE",
+            "style": "compact"
+          },
+          {
+            "text": "Traffic Management Plans",
+            "style": "compact"
+          },
+          {
+            "text": "DETAILS OF SUPERVISORY ARRANGEMENTS FOR WORKERS",
+            "style": "compact"
+          },
+          {
+            "text": "UNDERTAKING THIS TASK:",
+            "style": "compact"
+          },
+          {
+            "text": "Delete or add as relevant",
+            "style": "compact"
+          },
+          {
+            "text": "Suitably qualified supervisors for job",
+            "style": "compact"
+          },
+          {
+            "text": "Direct on-site supervision",
+            "style": "compact"
+          },
+          {
+            "text": "Remote site – communication systems/ schedule",
+            "style": "compact"
+          },
+          {
+            "text": "Audits",
+            "style": "compact"
+          },
+          {
+            "text": "Spot Checks, etc.",
+            "style": "compact"
+          },
+          {
+            "text": "Reporting systems",
+            "style": "compact"
+          },
+          {
+            "text": "DETAILS OF: REGULATORY PERMITS/LICENSES",
+            "style": "compact"
+          },
+          {
+            "text": "ENGINEERING DETAILS/CERTIFICATES/WORKCOVER. APPROVALS:",
+            "style": "compact"
+          },
+          {
+            "text": "Delete or add as relevant",
+            "style": "compact"
+          },
+          {
+            "text": "Local council permits",
+            "style": "compact"
+          },
+          {
+            "text": "Authorisation to work",
+            "style": "compact"
+          },
+          {
+            "text": "Confined Space Permit",
+            "style": "compact"
+          },
+          {
+            "text": "Building Approvals",
+            "style": "compact"
+          },
+          {
+            "text": "EPA approvals/permits",
+            "style": "compact"
+          },
+          {
+            "text": "Certain plant to be registered with State Authority",
+            "style": "compact"
+          },
+          {
+            "text": "PPE to comply with relevant Australian Standards",
+            "style": "compact"
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "references",
+      "title": "Legislation & reference register",
+      "core": true,
+      "defaultSelected": true,
+      "sourceFamily": "internal",
+      "requires": [],
+      "content": {
+        "paragraphs": [
+          {
+            "text": "RELEVANT LEGISLATION & CODES OF PRACTICE",
+            "style": "compact"
+          },
+          {
+            "text": "Retain only the legislation references applicable to your state of operation for this SWMS.",
+            "style": "bullet"
+          },
+          {
+            "text": "Commonwealth, NSW, QLD, ACT",
+            "style": "heading"
+          },
+          {
+            "text": "Work Health and Safety Act 2011",
+            "style": "compact"
+          },
+          {
+            "text": "Work Health and Safety Regulations 2011",
+            "style": "compact"
+          },
+          {
+            "text": "Northern Territory",
+            "style": "heading"
+          },
+          {
+            "text": "Work Health and Safety (National Uniform Legislation)",
+            "style": "compact"
+          },
+          {
+            "text": "Act 2011",
+            "style": "compact"
+          },
+          {
+            "text": "Work Health and Safety (National Uniform Legislation)",
+            "style": "compact"
+          },
+          {
+            "text": "Regulations",
+            "style": "compact"
+          },
+          {
+            "text": "SA, Tasmania",
+            "style": "heading"
+          },
+          {
+            "text": "Work Health and Safety Act 2012",
+            "style": "compact"
+          },
+          {
+            "text": "Work Health and Safety Regulations 2012",
+            "style": "compact"
+          },
+          {
+            "text": "Codes of Practice: Safe Work Australia (2011):",
+            "style": "compact"
+          },
+          {
+            "text": "Construction Work",
+            "style": "compact"
+          },
+          {
+            "text": "First Aid in the Workplace",
+            "style": "compact"
+          },
+          {
+            "text": "Managing the Risk of Falls at Workplaces",
+            "style": "compact"
+          },
+          {
+            "text": "Managing the Risk of Plant in the Workplace",
+            "style": "compact"
+          },
+          {
+            "text": "Managing Noise and Preventing Hearing Loss in the",
+            "style": "compact"
+          },
+          {
+            "text": "Workplace",
+            "style": "compact"
+          },
+          {
+            "text": "How to Manage Work Health and Safety Risks",
+            "style": "compact"
+          },
+          {
+            "text": "Hazardous Manual Tasks",
+            "style": "compact"
+          },
+          {
+            "text": "Managing Risks of Hazardous Chemicals",
+            "style": "compact"
+          },
+          {
+            "text": "Managing Electrical Risks in the Workplace",
+            "style": "compact"
+          },
+          {
+            "text": "Managing the Work Environment and Facilities",
+            "style": "compact"
+          },
+          {
+            "text": "WHS Consultation, Cooperation & Coordination",
+            "style": "compact"
+          },
+          {
+            "text": "Victoria:",
+            "style": "heading"
+          },
+          {
+            "text": "Occupational Health & Safety Act 2004",
+            "style": "compact"
+          },
+          {
+            "text": "Occupational Health & Safety Regulations 2007",
+            "style": "compact"
+          },
+          {
+            "text": "Compliance Codes: WorkSafe Victoria (2008): Compliance",
+            "style": "compact"
+          },
+          {
+            "text": "Code:",
+            "style": "compact"
+          },
+          {
+            "text": "Communicating OHS Across Languages",
+            "style": "compact"
+          },
+          {
+            "text": "First Aid in the Workplace",
+            "style": "compact"
+          },
+          {
+            "text": "Prevention of Falls in General Construction",
+            "style": "compact"
+          },
+          {
+            "text": "Workplace Amenities and Work Environment",
+            "style": "compact"
+          },
+          {
+            "text": "Codes of Practice: WorkSafe Victoria",
+            "style": "compact"
+          },
+          {
+            "text": "(1990): No. 13: Building and Construction Workplaces",
+            "style": "compact"
+          },
+          {
+            "text": "(2000): No. 25: Manual Handling",
+            "style": "compact"
+          },
+          {
+            "text": "(1995): No. 19: Plant",
+            "style": "compact"
+          },
+          {
+            "text": "(1998): No. 23: Plant (Amendment No. 1)",
+            "style": "compact"
+          },
+          {
+            "text": "(2004): No. 29: Prevention of Falls in Housing",
+            "style": "compact"
+          },
+          {
+            "text": "Construction",
+            "style": "compact"
+          },
+          {
+            "text": "(2000): No. 24: Hazardous Substances",
+            "style": "compact"
+          },
+          {
+            "text": "Western Australia",
+            "style": "heading"
+          },
+          {
+            "text": "Occupational Safety & Health Act 1984",
+            "style": "compact"
+          },
+          {
+            "text": "Occupational Safety & Health Regulations 1996",
+            "style": "compact"
+          },
+          {
+            "text": "Codes of Practice:",
+            "style": "heading"
+          },
+          {
+            "text": "PLANT/TOOLS/EQUIPMENT LIST FOR THE JOB.",
+            "style": "compact"
+          },
+          {
+            "text": "REFERENCE DOCUMENTS",
+            "style": "compact"
+          },
+          {
+            "text": "(Make & Model)",
+            "style": "compact"
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "fitness",
+      "title": "Fitness for work & lookout person",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "2. Drugs and Alcohol",
+            "hazard": "Installer affected by Drugs or Alcohol – Injury – risk of injury",
+            "ir": "2",
+            "rr": "4",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Random drug/ alcohol Testing",
+                "style": "bullet"
+              },
+              {
+                "text": "Site inspections",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 2
+          },
+          {
+            "job": "6. Fatigue",
+            "hazard": "Incidents as a result of fatigue symptoms",
+            "ir": "3",
+            "rr": "5",
+            "risks": [],
+            "controls": [
+              {
+                "text": "12 hour shifts and 12 hours breaks between shifts",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 3
+          },
+          {
+            "job": "7. Lookout person",
+            "hazard": "Incorrect use of lookout person – risk of injury",
+            "ir": "1",
+            "rr": "3",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Lookout person sole responsibility is to look out for the safety of the installers only.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 3
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "security",
+      "title": "Site hazards & security",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "9. Preparing the work site/area",
+            "hazard": "Pedestrians hazards Contact of chemical substances Contaminated needles – injury by needle or contents of syringe Mobile phones, Radio Head phones can cause distractions resulting in injury Infrastructure Damage Insufficient lighting – risk of injury",
+            "ir": "2 2 2 2 2 2",
+            "rr": "4 4 4 4 4 4",
+            "risks": [
+              [
+                "Pedestrians hazards",
+                "2",
+                "4"
+              ],
+              [
+                "Contact of chemical substances",
+                "2",
+                "4"
+              ],
+              [
+                "Contaminated needles – injury by needle or contents of syringe",
+                "2",
+                "4"
+              ],
+              [
+                "Mobile phones, Radio Head phones can cause distractions resulting in injury",
+                "2",
+                "4"
+              ],
+              [
+                "Infrastructure Damage",
+                "2",
+                "4"
+              ],
+              [
+                "Insufficient lighting – risk of injury",
+                "2",
+                "4"
+              ]
+            ],
+            "controls": [
+              {
+                "text": "Terra Verde will supply traffic control in the car park for the duration of the installation.",
+                "style": "bullet"
+              },
+              {
+                "text": "Place barricades around the work area before work commences.",
+                "style": "bullet"
+              },
+              {
+                "text": "Wear approved PPE as listed on page 1 and follow manufacturer recommendations and the relevant SDS for chemicals used.",
+                "style": "bullet"
+              },
+              {
+                "text": "Report contaminated needles immediately. Camden staff must not handle needles unless absolutely necessary.",
+                "style": "bullet"
+              },
+              {
+                "text": "Keep mobile phones at low volume; radio headphones are prohibited.",
+                "style": "bullet"
+              },
+              {
+                "text": "Report infrastructure damage immediately to the Project Manager and site owner or supervisor.",
+                "style": "bullet"
+              },
+              {
+                "text": "Always conduct works during normal daylight hours.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 4
+          },
+          {
+            "job": "10. SECURITY & SAFETY",
+            "hazard": "Injury or fatality due to contact with Large Machinery / Vehicle to Installer or equipment while Installation is taking place Unauthorised or trespassers enters worksite – confrontation / Aggressive person or under the influence of alcohol or drugs – possible injury",
+            "ir": "2 2",
+            "rr": "3 3",
+            "risks": [
+              [
+                "Injury or fatality due to contact with Large Machinery / Vehicle to Installer or equipment while Installation is taking place Unauthorised or trespassers enters worksite – confrontation / Aggressive",
+                "2",
+                "3"
+              ],
+              [
+                "person or under the influence of alcohol or drugs – possible injury",
+                "2",
+                "3"
+              ]
+            ],
+            "controls": [
+              {
+                "text": "Identify and maintain the danger zone inside and outside the work area.",
+                "style": "bullet"
+              },
+              {
+                "text": "Terra Verde will supply traffic control in the car park for the duration of the installation.",
+                "style": "bullet"
+              },
+              {
+                "text": "Question unauthorised persons calmly and contact Site Security or the site owner.",
+                "style": "bullet"
+              },
+              {
+                "text": "Contact Police on 000 for serious circumstances or the community hotline on 1800 105 105.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 4
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "scissor",
+      "title": "Scissor lift",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "11. WORKING AT HEIGHTS",
+            "hazard": "Working at heights - Falling",
+            "ir": "1",
+            "rr": "3",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Use the electric scissor lift for all work at height.",
+                "style": "bullet"
+              },
+              {
+                "text": "The scissor lift must comply with Australian Standards and be suitable for the site and task.",
+                "style": "bullet"
+              },
+              {
+                "text": "Remain within the scissor lift basket and use its suitable built-in fall protection in accordance with the manufacturer’s instructions.",
+                "style": "bullet"
+              },
+              {
+                "text": "Secure tools and small equipment against falling while working from the basket.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 5
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "crane",
+      "title": "Crane lifts",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "12. Working with cranes",
+            "hazard": "Objects falling or becoming uncontrolled whilst being lifted by crane",
+            "ir": "1",
+            "rr": "3",
+            "risks": [],
+            "controls": [
+              {
+                "text": "All crane lifts are to be supervised directly by crane company dogman",
+                "style": "bullet"
+              },
+              {
+                "text": "All staff are to act as secondary spotters during all lifts, but outside the danger zone.",
+                "style": "bullet"
+              },
+              {
+                "text": "All staff to wear hard hats when required to work within danger zone of a crane when lifting.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 5
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "overhead",
+      "title": "Overhead power & conductive equipment",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "13. OVERHEAD POWER LINES",
+            "hazard": "Installer working too close or use conductive equipment within 3 metres of overhead power lines or other electrical equipment – injury or fatality Safe working distances - injury or fatality",
+            "ir": "1 1",
+            "rr": "3 2",
+            "risks": [
+              [
+                "Installer working too close or use conductive equipment within 3 metres of overhead power lines or other electrical equipment – injury or fatality",
+                "1",
+                "3"
+              ],
+              [
+                "Safe working distances - injury or fatality",
+                "1",
+                "2"
+              ]
+            ],
+            "controls": [
+              {
+                "text": "Identify locations where “power outage” is required",
+                "style": "bullet"
+              },
+              {
+                "text": "Insure any access equipment is not used within the no go zones of power lines",
+                "style": "bullet"
+              },
+              {
+                "text": "Where the need arises to work within the no go zone, prior meeting & work plan must be arranged with the appropriate power authority to the location of the site",
+                "style": "bullet"
+              },
+              {
+                "text": "Always work away from the power, outside of the no go zone, or with appropriate measures, eg: Spotter, tiger tails/Shut off",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 5
+          },
+          {
+            "job": "14. Conductive Plant & Tools",
+            "hazard": "Use of conductive plant & tools around overhead power lines – injury or fatality",
+            "ir": "1",
+            "rr": "4",
+            "risks": [],
+            "controls": [
+              {
+                "text": "No conductive plant or tools used around any power source",
+                "style": "bullet"
+              },
+              {
+                "text": "NO - Metal tape measures",
+                "style": "bullet"
+              },
+              {
+                "text": "NO - Metal ladders",
+                "style": "bullet"
+              },
+              {
+                "text": "NO - Scaffolding equipment",
+                "style": "bullet"
+              },
+              {
+                "text": "ONLY Non-Conductive plant or tools used, i.e. fibreglass or other appropriate non-conductive material to be used within the Rail Corridor or property.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 5
+          }
+        ],
+        "figures": [
+          "sad-tables"
+        ],
+        "figureCaptions": {
+          "sad-tables": "Appendix A – SAD Tables:"
+        }
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "fuels",
+      "title": "Fuels, attachments & transport",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "16. Transportation of Fuels and Oils",
+            "hazard": "Spills, Leaks, Explosions. – injury or fatality",
+            "ir": "1",
+            "rr": "5",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Carry in separate containers, (Clearly marked) To be placed in leak proof trays",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 6
+          },
+          {
+            "job": "17. Attachments",
+            "hazard": "Damage to equipment – risk of injury",
+            "ir": "3",
+            "rr": "5",
+            "risks": [],
+            "controls": [
+              {
+                "text": "All attachments to be properly connected.",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 6
+          },
+          {
+            "job": "18. Transportation",
+            "hazard": "Movement in vehicle risk of injury",
+            "ir": "3",
+            "rr": "5",
+            "risks": [],
+            "controls": [
+              {
+                "text": "Make sure equipment is secure, so that it cannot move around causing damage to vehicles and avoiding spills",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 6
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "excavation",
+      "title": "Excavation & service searches",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "19. Cable Strikes & Collapse",
+            "hazard": "Risk of strikes to live cables, service cables and water pipes – injury or fatality",
+            "ir": "1",
+            "rr": "3",
+            "risks": [],
+            "controls": [
+              {
+                "text": "“Service Search” required prior to all excavation",
+                "style": "bullet"
+              },
+              {
+                "text": "validation of “Service Search” to the worksite",
+                "style": "bullet"
+              },
+              {
+                "text": "Correct PPE gear and safety equipment used",
+                "style": "bullet"
+              },
+              {
+                "text": "Emergency contact details on hand",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 6
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "electrical",
+      "title": "Electrical work",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "paragraphs": [
+          {
+            "text": "Electrical works",
+            "style": "body"
+          },
+          {
+            "text": "All works conducted on any signage with electricity can only be performed if “made safe” by a qualified Electrician. Connection & disconnection works must also only be done by a qualified Electrician.",
+            "style": "bullet"
+          },
+          {
+            "text": "Any electrical installations are to be ONLY done by a qualified Electrician",
+            "style": "bullet"
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "exit",
+      "title": "Site exit & substances register",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [
+        "additional-rating"
+      ],
+      "content": {
+        "rows": [
+          {
+            "job": "20. Exiting the site/area",
+            "hazard": "Hazards to Pedestrians Deterioration of safety equipment Security",
+            "ir": "3 2 2",
+            "rr": "5 4 5",
+            "risks": [
+              [
+                "Hazards to Pedestrians",
+                "3",
+                "5"
+              ],
+              [
+                "Deterioration of safety equipment",
+                "2",
+                "4"
+              ],
+              [
+                "Security",
+                "2",
+                "5"
+              ]
+            ],
+            "controls": [
+              {
+                "text": "Give way to Pedestrians",
+                "style": "bullet"
+              },
+              {
+                "text": "Make sure all Boarder kits, screws are not protruding",
+                "style": "bullet"
+              },
+              {
+                "text": "No equipment to be left on site/area",
+                "style": "bullet"
+              },
+              {
+                "text": "Make sure all rubbish is removed from the site",
+                "style": "bullet"
+              },
+              {
+                "text": "Installers to SIGN OUT with the site security or supervisor where appropriate before leaving the site",
+                "style": "bullet"
+              }
+            ],
+            "sourcePage": 6
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "Hazardous Substances | Materials used for this SWMS",
+            "style": "body"
+          },
+          {
+            "text": "Name of product etc.",
+            "style": "body"
+          },
+          {
+            "text": "MSDS",
+            "style": "body"
+          },
+          {
+            "text": "Attached:",
+            "style": "body"
+          },
+          {
+            "text": "Yes/No",
+            "style": "body"
+          },
+          {
+            "text": "Appropriate Controls",
+            "style": "body"
+          },
+          {
+            "text": "Measures in Place?",
+            "style": "body"
+          },
+          {
+            "text": "Yes/No",
+            "style": "body"
+          }
+        ]
+      },
+      "startNewPage": true
+    },
+    {
+      "id": "additional-rating",
+      "title": "Additional activity rating scale & control hierarchy",
+      "core": false,
+      "defaultSelected": false,
+      "sourceFamily": "supplementary",
+      "requires": [],
+      "content": {
+        "paragraphs": [
+          {
+            "text": "Note: There is a requirement to evaluate the worksite & conditions prior to starting any work on site. Any changes must be recorded on the site risk assessment and advised at the pre-work briefing. Please refer to the Risk Assessment / Pre- Work Checklist/ tool box talk for additional information: i.e., Name of designated first aider etc.",
+            "style": "body"
+          }
+        ],
+        "hierarchy": [
+          [
+            "",
+            "HIERARCHY OF CONTROL MEASURES",
+            null,
+            null,
+            ""
+          ],
+          [
+            "",
+            "Elimination",
+            "",
+            "First Option – can the hazard be removed altogether by elimination of process or substance?",
+            null
+          ],
+          [
+            "",
+            "Substitution",
+            "",
+            "Involves replacing hazard with one that presents a lower risk",
+            null
+          ],
+          [
+            "",
+            "Engineering Controls",
+            "",
+            "Involves structural change to the work environment or work process to place a barrier to, or interrupt a transmission path between the worker and the hazard",
+            null
+          ],
+          [
+            "",
+            "Redesign",
+            "",
+            "Redesign to reduce risk",
+            null
+          ],
+          [
+            "",
+            "Isolation",
+            "",
+            "Isolate people from the risk",
+            null
+          ],
+          [
+            "",
+            "Administrative Procedures",
+            "",
+            "Reduces or eliminates the exposure to a hazard by adherence to procedures, instructions or training. Administrative controls are dependent on human behaviour for success",
+            null
+          ],
+          [
+            "",
+            "Protective Clothing / Equipment",
+            "",
+            "Last Option - Provides a barrier between a person and the hazard. This is dependent on PPE being chosen correctly as well as fitted and worn at all times where required",
+            null
+          ]
+        ],
+        "figures": [
+          "additional-risk-diagram"
+        ]
+      },
+      "startNewPage": true
+    }
+  ],
+  "figures": [
+    {
+      "id": "risk-diagram",
+      "url": "/templates/swms/risk-diagram.png",
+      "sha256": "f9cde69e2f83eb3395146284d971dd81981aa117985a8f03381248c525e1036a"
+    },
+    {
+      "id": "ppe-diagram",
+      "url": "/templates/swms/ppe-diagram.png",
+      "sha256": "7e2321fa15f080c9439626879c96a278437a7694fb02a381f30eb71ee9d3c01c"
+    },
+    {
+      "id": "additional-risk-diagram",
+      "url": "/templates/swms/additional-risk-diagram.png",
+      "sha256": "ca808ae22085c236ef73f1d692548e9b2f6471373b477d44e88f0082e45c236c"
+    },
+    {
+      "id": "sad-tables",
+      "url": "/templates/swms/sad-tables.png",
+      "sha256": "faa4a49382368ee80be0e213cf5190f3e20da269d4717c994d5c04b160de60dd"
+    }
+  ],
+  "notes": [
+    {
+      "code": "preserved-source-wording",
+      "detail": "Control wording, ratings, diagrams and legacy references are preserved from the reviewed native extraction. Formatting may change; wording must not be silently rewritten."
+    },
+    {
+      "code": "source-organisation-reference",
+      "sectionId": "security",
+      "detail": "The preserved needle-handling control names Camden staff. This is source control wording, not project metadata. The issue screen must identify the relevant organisation before operational use."
+    },
+    {
+      "code": "source-ppe-diagram",
+      "sectionId": "risk",
+      "detail": "Original PPE diagram contains source tick marks. Those marks are not a project-specific PPE assessment or an installer acknowledgement."
+    },
+    {
+      "code": "source-rating-scales",
+      "detail": "Internal and supplementary controls retain their respective rating scales; include the additional rating scale with any supplementary activity."
+    }
+  ],
+  "attribution": {
+    "internal": "Source document 10014 / Version 3 | © SafetyCulture All Rights Reserved",
+    "supplementary": "Supplementary activity template | Original source controls and rating scale retained"
+  }
+}

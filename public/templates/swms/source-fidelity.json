@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "sourceSemanticSha256": "5c9118378b62ee91e0824c604645d05052710d708284bc62d69d0e62a90c3718",
+  "paragraphChecks": 67,
+  "paragraphChecksPassed": 67,
+  "internalActivityCoverage": [
+    {
+      "section": "planning",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "site",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "materials",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "setup",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "mount",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "height",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "asbestos",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "ceiling",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "tools",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "lifting",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "testing",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "section": "completion",
+      "missing": [],
+      "extra": []
+    }
+  ],
+  "omittedSourceRecordPages": [
+    "Filled project identity and approval pages",
+    "Filled installer acknowledgement pages"
+  ],
+  "preservedControlContent": true,
+  "figures": [
+    {
+      "id": "risk-diagram",
+      "url": "/templates/swms/risk-diagram.png",
+      "sha256": "f9cde69e2f83eb3395146284d971dd81981aa117985a8f03381248c525e1036a"
+    },
+    {
+      "id": "ppe-diagram",
+      "url": "/templates/swms/ppe-diagram.png",
+      "sha256": "7e2321fa15f080c9439626879c96a278437a7694fb02a381f30eb71ee9d3c01c"
+    },
+    {
+      "id": "additional-risk-diagram",
+      "url": "/templates/swms/additional-risk-diagram.png",
+      "sha256": "ca808ae22085c236ef73f1d692548e9b2f6471373b477d44e88f0082e45c236c"
+    },
+    {
+      "id": "sad-tables",
+      "url": "/templates/swms/sad-tables.png",
+      "sha256": "faa4a49382368ee80be0e213cf5190f3e20da269d4717c994d5c04b160de60dd"
+    }
+  ]
+}

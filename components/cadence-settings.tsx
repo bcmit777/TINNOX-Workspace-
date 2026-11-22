@@ -1,0 +1,5 @@
+'use client';
+import {useState} from 'react';
+import {api} from './workspace';
+import {Field} from './project-controls';
+export function CadenceSettings({value,onSaved}:{value:any;onSaved:()=>Promise<any>}){const [form,setForm]=useState(value||{kickoffDays:2,tradesDays:5,sitePrepDays:7,orderDays:2,qcDays:7,logisticsDays:10}),[message,setMessage]=useState('');return <section className="panel form-panel"><h2>Management cadence</h2><div className="form-grid">{Object.entries({kickoffDays:'Internal kick-off',tradesDays:'Trade coordination',sitePrepDays:'Site preparation',orderDays:'Supplier order',qcDays:'QC planning',logisticsDays:'Logistics planning'}).map(([key,label])=><Field key={key} label={label+' (days after Sales handover)'} type="number" value={form[key]} onChange={v=>setForm({...form,[key]:v})}/>)}</div><button className="button primary" onClick={async()=>{try{await api('/settings',{cadence:form});await onSaved();setMessage('Saved for new project handovers.')}catch(e:any){setMessage(e.message)}}}>Save cadence</button>{message&&<p role="status">{message}</p>}</section>}

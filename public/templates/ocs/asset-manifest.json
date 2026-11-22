@@ -1,0 +1,46 @@
+{
+  "edition": "2026-11-22",
+  "description": "Unfilled standard layouts and brand resources only. No source project artwork or source PDFs.",
+  "assets": [
+    {
+      "file": "led-specifications.png",
+      "sha256": "e66a65e129ef32760a8bc533e67e2aefe5b6e7e005198ec553ba0a9f2e5a79a1"
+    },
+    {
+      "file": "led-accessories-spares.png",
+      "sha256": "e379023a2d4e71924fbe30415f046760597e2be4846fb12f28e11c8fd397c809"
+    },
+    {
+      "file": "led-diagram-names.png",
+      "sha256": "a3de241c55b1215496552cdd9e38923bcfd6a588c64154ad0e4a8b2ef751ce09"
+    },
+    {
+      "file": "structurasign-appearance.png",
+      "sha256": "58e8ff0cf88ac59f7a71285cec879c7d1460e2c73e6a3387e592237d0617974a"
+    },
+    {
+      "file": "structurasign-specifications.png",
+      "sha256": "a1d8acfa71d806aec72f1f9b9d0089fcd66bb00c3d7ff7128ca61da17fa85ee3"
+    },
+    {
+      "file": "structurasign-packaging.png",
+      "sha256": "e76f1c3af25d37e8b264aa8aa4297db60301179a3ae8a1862a644386fec0a0dd"
+    },
+    {
+      "file": "digital-kiosk-appearance.png",
+      "sha256": "7aab12ace29be926c4f76ad5738bfa18e83e1540d6aaca59b80a4e915ed21ac1"
+    },
+    {
+      "file": "digital-kiosk-packaging.png",
+      "sha256": "ddd23e821cabdb4220ae2893535d1716e93465d1c890fc0cb03a540dc0dcfe2a"
+    },
+    {
+      "file": "tinnox-logo.png",
+      "sha256": "ae6d284eb8a4948f67cda4f5a231b4f3c56ff07ba4bf894fb4eb1e070bd8ced7"
+    },
+    {
+      "file": "HelveticaNeue-source.ttf",
+      "sha256": "9246bcdbde999a005ef7349007ccf67315f79138208501b00a5bd49158fbba92"
+    }
+  ]
+}

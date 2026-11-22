@@ -1,0 +1,3 @@
+import {publicTracker} from '@/lib/server/project-workflow';
+import {WorkError} from '@/lib/server/workspace-store';
+export async function GET(request:Request,context:any){try{const {token}=await context.params;const url=new URL(request.url);const result=await publicTracker(token,url.searchParams.get('document')||undefined,url.searchParams.get('file')||undefined,url.searchParams.get('packing')||undefined);return result instanceof Response?result:Response.json(result,{headers:{'Cache-Control':'private, no-store'}});}catch(e){return Response.json({error:e instanceof WorkError?e.message:'Project unavailable'},{status:e instanceof WorkError?e.status:500});}}

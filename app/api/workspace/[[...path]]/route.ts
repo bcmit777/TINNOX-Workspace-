@@ -1,0 +1,10 @@
+import {brandedPackingPDF} from '@/lib/server/packing-pdf';
+import {workflowAction} from '@/lib/server/project-workflow';
+import { currentMember,bootstrap,createWork,mutate,document,detail,savePerson,saveCadence,upload,download,WorkError } from '@/lib/server/workspace-store';
+export const dynamic='force-dynamic';
+const reply=(data:any,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'}});
+async function handle(request:Request,context:any){try{const user=await currentMember();const {path=[]}=await context.params;if(request.method==='GET'){if(!path.length)return reply(await bootstrap(user));if(path[0]==='documents'){const doc=await document(user,path[1]);if(path[2]==='packing-pdf')return brandedPackingPDF(doc);return reply(doc);}if(path[0]==='records')return reply(await detail(user,path[1]));if(path[0]==='files')return await download(user,path[1]);}
+ if(request.method==='POST'){const origin=request.headers.get('origin');if(origin&&origin!==new URL(request.url).origin)throw new WorkError('This request did not come from Workspace.',403);if(Number(request.headers.get('content-length')||0)>102*1024*1024)throw new WorkError('This upload is too large.',413);if(path[0]==='uploads')return reply(await upload(user,path[1],await request.formData()));const input=await request.json();if(JSON.stringify(input).length>800000)throw new WorkError('This form is too large.');if(path[0]==='workflow')return reply(await workflowAction(user,path[1],input));if(path[0]==='records')return reply(path[1]?await mutate(user,path[1],input):await createWork(user,input));if(path[0]==='settings')return reply(await saveCadence(user,input));if(path[0]==='people')return reply(await savePerson(user,input));}throw new WorkError('Not found.',404);
+ }catch(e){if(e instanceof WorkError)return reply({error:e.message,fields:e.fields},e.status);console.error('Workspace request failed',e);return reply({error:'Workspace could not complete the request. Your unsaved form is still available.'},500);}}
+export const GET=handle;export const POST=handle;
+
