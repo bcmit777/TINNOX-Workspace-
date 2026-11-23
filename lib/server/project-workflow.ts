@@ -7,9 +7,10 @@ import {initialValues} from '../templates/order-confirmation';
 import {getQCTemplate,resolveQCApplicability} from '../templates/qc';
 import {projectEvidenceChecklist,siteInspectionSections,resolveSWMSActivitySelection} from '../templates/pm-templates';
 
-const today=()=>new Date().toISOString().slice(0,10);
+const businessDate=(d:Date)=>new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
+const today=()=>businessDate(new Date());
 const timestamp=()=>new Date().toISOString();
-const due=(days:number)=>new Date(Date.now()+days*86400000).toISOString().slice(0,10);
+const due=(days:number)=>businessDate(new Date(Date.now()+days*86400000));
 function authority(user:Member,r:WorkRecord){if(user.kind==='partner'||!inScope(user,r)||!moduleCanWrite(user,r.module))throw new WorkError('This action belongs to the responsible module.',403);}
 async function workflowRecord(user:Member,p:WorkRecord,kind:WorkflowKind,suffix='',payload:any={}){
  const definition=workflowDefinitions[kind];const key=`workflow:${p.id}:${kind}${suffix?':'+suffix:''}`;
@@ -33,7 +34,7 @@ export async function handover(user:Member,p:WorkRecord,input:any){
  children.push(await workflowRecord(user,p,'pm-plan','',{stakeholders:p.payload.stakeholders||[],trackerToken:crypto.randomUUID(),installationEstimate:p.payload.promisedInstallationDate||'',deliveryDate:p.payload.promisedDeliveryDate||'',kickoffDue:due(cadence.kickoffDays),tradesDue:due(cadence.tradesDays),sitePrepDue:due(cadence.sitePrepDays),commissioningInHouse:true}));
  for(const line of lines)children.push(await workflowRecord(user,p,'order-confirmation',line,{productLine:line,values:{},spares:[],paymentStages:[50,50],extraCosts:[]}));
  const categories=[...new Set<string>(entries.map((e:any)=>e.category==='Digital kiosk'?'qc-kiosk':'qc-led'))];
- for(const k of categories)children.push(await workflowRecord(user,p,k as WorkflowKind,'',{evidence:{},checks:{},counts:[],scope:{processorIncluded:p.payload.processorIncluded,touchIncluded:p.payload.touchIncluded}}));
+ for(const k of categories){const selected=entries.filter((e:any)=>(e.category==='Digital kiosk'?'qc-kiosk':'qc-led')===k);children.push(await workflowRecord(user,p,k as WorkflowKind,'',{evidence:{},checks:{},counts:[],scope:{processorIncluded:selected.some((e:any)=>e.processorIncluded??p.payload.processorIncluded),touchIncluded:selected.some((e:any)=>e.touchIncluded??p.payload.touchIncluded)}}));}
  children.push(await workflowRecord(user,p,'logistics','',{cases:[],contents:[],dispatchConfirmed:false}));
  for(const k of pmDocumentKinds){const r=await workflowRecord(user,p,k,'',{checks:{},evidence:{},selectedActivities:[]});if(!applicableDocument(k,p))r.state='Not applicable';children.push(r);}
  const tech=await baseRecord(user,{kind:'work',module:'technical',title:'System schematics & deployment profile',projectId:p.id,organisationId:p.organisationId,sourceId:p.id,sourceKey:`technical:${p.id}`,infIds,dueAt:due(5)});children.push(tech);

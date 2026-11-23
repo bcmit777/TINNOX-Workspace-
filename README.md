@@ -1,10 +1,10 @@
 # TINNOX Workspace
 
-**Milestone: reviewed workflows integrated — 22 November 2026.**
+**Milestone: copied CPQ acceptance connected to Production and PM — 23 November 2026.**
 
 Live review Site: https://tinnox-workspace-review.tinnox-4852.chatgpt.site/
 
-This repository contains the shared application, controlled templates, permissions, records, uploads and workflow handoffs. It never seeds demonstration projects, infrastructure, contacts, inspections or completed work. Test fixtures exist only in explicitly local verification scripts.
+This repository contains the shared application, controlled templates, permissions, records, uploads and workflow handoffs. A clearly labelled Parramatta review project has been created through the copied Ultimate CPQ and handed over to the live review Workspace. Customer/contact/site details are illustrative. No manufacture, inspection, installation or customer signature is fabricated. Local QA records remain local.
 
 ## Included spaces
 
@@ -43,9 +43,11 @@ Original applications and records remain untouched. Workspace launches these ind
 
 The PM-linked customer tracker is the new Workspace `/track/…` route, reading central records. The preserved tracker copy retains independent storage; it is not silently synchronized.
 
-CPQ handoff accepts structured JSON plus the signed PDF, or direct entry. Automatic CPQ push, HubSpot, Xero sending, automatic email/calendar delivery, University progress sync and proprietary CRM are **not connected**. Invoice buttons create Finance requests and never report an invoice sent. Kick-off scheduling creates a downloadable calendar invitation.
+The copied CPQ now pushes its frozen accepted quote, PDF and stakeholders directly to Workspace with an idempotent receipt. PandaDoc signing configuration, HubSpot, Xero sending, automatic email/calendar delivery, University progress sync and proprietary CRM are **not connected**. Invoice buttons create Finance requests and never report an invoice sent. Kick-off scheduling creates a downloadable calendar invitation.
 
 The Site remains owner-private. External customer/installer access needs an explicit later audience decision. Current hosting is Sites with Cloudflare D1/R2. AWS Sydney migration is a future milestone.
+
+See [CPQ handover milestone](docs/cpq-handoff-milestone-2026-11-23.md) and the companion CPQ patch in `integrations/ultimate-cpq`.
 
 ## Development
 

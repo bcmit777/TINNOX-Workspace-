@@ -1,0 +1,258 @@
+diff --git a/app/CPQApp.tsx b/app/CPQApp.tsx
+index a6affa0..e9bd665 100644
+--- a/app/CPQApp.tsx
++++ b/app/CPQApp.tsx
+@@ -306,7 +306,7 @@ export default function CPQApp({previewRole}:{previewRole?:'public'|'staff'}={})
+   if(viewQuote)return <QuoteView quote={viewQuote} onClose={()=>setViewQuote(null)}/>;
+   return <>{resetGuard.dialog}
+     <div className={'app-shell legacy-configurator screen-only'+(sales?' cpq-sales-view':'')}>
+-      <>{previewRole&&<aside className="cpq-role-preview" aria-label="Role preview"><div><strong>{previewRole==='staff'?'Sales':'Public'} preview</strong><span>Current catalogue · saving disabled · existing bank records hidden{previewRole==='staff'?' · default staff permissions':''}</span></div><label><span>View as</span><select aria-label="Preview another role" value={previewRole} onChange={e=>guardNavigation(()=>{window.location.href=e.target.value==='management'?'/':'/role-preview/'+e.target.value;})}><option value="staff">Sales</option><option value="public">Public</option><option value="management">Return to manager</option></select></label></aside>}</><header className="app-header"><a className="brand" href="/" aria-label="TINNOX Ultimate CPQ home"><img src="/tinnox-logo.svg" alt="TINNOX" width="148" height="40"/><span className="legacy-subbrand">TINNOX ULTIMATE CPQ</span></a><div className="header-actions"><span className={'workspace-badge '+(staff?'internal':'')}><span/>{manager?'Management':staff?'Internal sales':'Public configurator'}</span><button className="button secondary small" onClick={()=>setGuideOpen(true)}><HelpCircle size={15}/>How it works</button>{manager&&<details className="cpq-role-picker"><summary>Preview role</summary><div><a href="/role-preview/staff" target="_blank" rel="noopener noreferrer">Sales preview</a><a href="/role-preview/public" target="_blank" rel="noopener noreferrer">Public preview</a></div></details>}{!previewRole&&(session.user?<><span className="user-name">{session.user.name||session.user.email}</span><a className="button ghost small" href="/signout-with-chatgpt?return_to=/" target="_top">Sign out</a></>:<a className="button secondary small" href="/signin-with-chatgpt?return_to=/" target="_top"><LogIn size={16}/>Staff sign in</a>)}</div></header>
++      <>{previewRole&&<aside className="cpq-role-preview" aria-label="Role preview"><div><strong>{previewRole==='staff'?'Sales':'Public'} preview</strong><span>Current catalogue · saving disabled · existing bank records hidden{previewRole==='staff'?' · default staff permissions':''}</span></div><label><span>View as</span><select aria-label="Preview another role" value={previewRole} onChange={e=>guardNavigation(()=>{window.location.href=e.target.value==='management'?'/':'/role-preview/'+e.target.value;})}><option value="staff">Sales</option><option value="public">Public</option><option value="management">Return to manager</option></select></label></aside>}</><header className="app-header"><a className="brand" href="/" aria-label="TINNOX Ultimate CPQ home"><img src="/tinnox-logo.svg" alt="TINNOX" width="148" height="40"/><span className="legacy-subbrand">TINNOX ULTIMATE CPQ</span></a><div className="header-actions"><a className="button ghost small" href="https://tinnox-workspace-review.tinnox-4852.chatgpt.site/?module=sales">Workspace ↗</a><span className={'workspace-badge '+(staff?'internal':'')}><span/>{manager?'Management':staff?'Internal sales':'Public configurator'}</span><button className="button secondary small" onClick={()=>setGuideOpen(true)}><HelpCircle size={15}/>How it works</button>{manager&&<details className="cpq-role-picker"><summary>Preview role</summary><div><a href="/role-preview/staff" target="_blank" rel="noopener noreferrer">Sales preview</a><a href="/role-preview/public" target="_blank" rel="noopener noreferrer">Public preview</a></div></details>}{!previewRole&&(session.user?<><span className="user-name">{session.user.name||session.user.email}</span><a className="button ghost small" href="/signout-with-chatgpt?return_to=/" target="_top">Sign out</a></>:<a className="button secondary small" href="/signin-with-chatgpt?return_to=/" target="_top"><LogIn size={16}/>Staff sign in</a>)}</div></header>
+       <section className="legacy-intro"><div><h1>TINNOX Ballpark Calculator</h1>{!sales&&<p>Build an option, compare {staff?'the investment':'your configurations'} and print it for your client.</p>}</div><span>{staff?'Sales & quoting workspace':'Explore screens and dimensions'}</span></section>
+       <nav className="app-nav" aria-label="Workspace navigation"><div className="nav-primary">{tabs.filter(t=>!['quotes','ballparks'].includes(t.id)||staff).map(t=>{const Icon=t.icon;return <button key={t.id} aria-label={t.label} aria-current={tab===t.id?'page':undefined} className={tab===t.id?'active':''} onClick={()=>{if(t.id!==tab)guardNavigation(()=>setTab(t.id));}}><Icon size={17}/>{t.label}{t.id==='compare'&&options.length>0&&<span className="nav-count">{options.length}</span>}</button>;})}</div>{manager&&<div className="nav-management"><span>MANAGE</span>{managementTabs.map(t=>{const Icon=t.icon;return <button key={t.id} aria-label={t.label} className={tab===t.id?'active':''} onClick={()=>{if(t.id!==tab)guardNavigation(()=>setTab(t.id));}}><Icon size={15}/>{t.label}</button>;})}</div>}</nav>
+       {notice&&<div className="toast" role="status"><CheckCircle2 size={18}/>{notice}<button aria-label="Dismiss notification" onClick={()=>setNotice('')}><X size={16}/></button></div>}
+diff --git a/app/QuotePreview.tsx b/app/QuotePreview.tsx
+index 5bcf53e..a546f62 100644
+--- a/app/QuotePreview.tsx
++++ b/app/QuotePreview.tsx
+@@ -8,6 +8,6 @@ import QuoteView from './QuoteView';
+ export default function QuotePreview({id,autoPrint=false}:{id:string;autoPrint?:boolean}){
+   const [quote,setQuote]=useState<Quote|null>(null),[error,setError]=useState('');
+   useEffect(()=>{const controller=new AbortController();void api<{quote:Quote}>('/api/quotes/'+encodeURIComponent(id),{signal:controller.signal}).then(data=>{if(!controller.signal.aborted)setQuote(data.quote);}).catch(cause=>{if(!controller.signal.aborted)setError(cause instanceof Error?cause.message:'The quotation could not be opened.');});return()=>controller.abort();},[id]);
+-  if(quote)return <QuoteView quote={quote} autoPrint={autoPrint}/>;
++  if(quote)return <>{!autoPrint&&<div className="no-print" style={{padding:"12px 24px",background:"#f2f6f7",display:"flex",gap:24}}><a href={"/quotes/"+id+"/handover"}>Workspace handover ↗</a><a href="https://tinnox-workspace-review.tinnox-4852.chatgpt.site/?module=sales">Back to Workspace</a></div>}{quote.status==='test_accepted'&&<div style={{padding:12,textAlign:'center',background:'#fff4d8',fontWeight:600}}>REVIEW TEST — accepted for workflow testing; no customer signature</div>}<QuoteView quote={quote} autoPrint={autoPrint}/></>;
+   return <main className="offer-loading"><img src="/tinnox-logo.svg" alt="TINNOX"/>{error?<AlertCircle size={30}/>:<Loader2 className="spin" size={30}/>}<h1>{error?'Quote unavailable':'Opening quotation'}</h1><p>{error||'Preparing the saved customer document.'}</p></main>;
+ }
+diff --git a/app/WorkspaceHandover.tsx b/app/WorkspaceHandover.tsx
+new file mode 100644
+index 0000000..e45495f
+--- /dev/null
++++ b/app/WorkspaceHandover.tsx
+@@ -0,0 +1,11 @@
++'use client';
++import {useEffect,useState} from 'react';
++const workspace='https://tinnox-workspace-review.tinnox-4852.chatgpt.site';
++export default function WorkspaceHandover({id}:{id:string}){
++ const [data,setData]=useState<any>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[pdf,setPDF]=useState<File|null>(null),[ack,setAck]=useState(false),[contacts,setContacts]=useState<any[]>([]),[email,setEmail]=useState(''),[notes,setNotes]=useState('');
++ async function load(){const r=await fetch('/api/quotes/'+id+'/handover');const d:any=await r.json();if(!r.ok)throw Error(d.error);setData(d);setContacts(d.metadata?.stakeholders||[{id:'commercial',role:'Commercial contact',company:d.quote.customerOrganisation,name:d.quote.customerName,email:d.quote.customerEmail,phone:''}]);setEmail(d.metadata?.invoiceEmail||d.quote.customerEmail);setNotes(d.metadata?.scopeNotes||'');}
++ useEffect(()=>{load().catch(e=>setError(e.message))},[id]);
++ async function send(retry=false){setBusy(true);setError('');try{const form=new FormData();form.set('action',retry?'retry':'accept');if(pdf)form.set('pdf',pdf);form.set('metadata',JSON.stringify({stakeholders:contacts,invoiceEmail:email,scopeNotes:notes,testAcknowledged:ack}));const r=await fetch('/api/quotes/'+id+'/handover',{method:'POST',body:form}),d:any=await r.json();if(!r.ok)throw Error(d.error);await load()}catch(e:any){setError(e.message)}finally{setBusy(false)}}
++ const q=data?.quote,locked=data&&data.status!=='Awaiting acceptance';
++ return <main className="handover-shell"><header><a href={workspace+'/?module=sales'}><img src="/tinnox-logo.svg" width="145" alt="TINNOX"/></a><nav><a href="/">Ultimate CPQ</a><a href={workspace+'/?module=sales'}>Workspace ↗</a></nav></header><div className="handover-heading"><div><span>SALES & COMMERCIAL</span><h1>Workspace handover</h1>{q&&<p>{q.projectNumber} · {q.number}</p>}</div>{q&&<a className="button secondary" href={'/quotes/'+id} target="_blank" rel="noreferrer">View quotation</a>}</div>{error&&<p role="alert" className="handover-error">{error}</p>}{data&&<><section className="handover-panel"><div className="handover-row"><h2>{q.title}</h2><strong className="handover-status">{data.status}</strong></div><div className="handover-facts"><div><label>Customer</label><strong>{q.customerOrganisation}</strong></div><div><label>Site</label><strong>{q.siteAddress}</strong></div><div><label>Quote revision</label><strong>{q.version}</strong></div><div><label>Acceptance</label><strong>{data.reviewTest?'Review test · no customer signature':'PandaDoc completion required'}</strong></div></div><table><thead><tr><th>Infrastructure</th><th>Product</th><th>Size</th></tr></thead><tbody>{(q.options[0].groups||q.options).map((g:any)=><tr key={g.id}><td>{g.label}</td><td>{g.geometry.name||g.geometry.familyName||g.geometry.family}</td><td>{g.geometry.widthMm} × {g.geometry.heightMm} mm</td></tr>)}</tbody></table></section><section className="handover-panel"><h2>Stakeholders</h2><div className="handover-table"><table><thead><tr>{['Role','Company','Full name','Email','Phone',''].map((s,i)=><th key={i}>{s}</th>)}</tr></thead><tbody>{contacts.map((c,i)=><tr key={c.id}>{['role','company','name','email','phone'].map(k=><td key={k}><input aria-label={k+' '+(i+1)} disabled={locked} value={c[k]||''} onChange={e=>setContacts(contacts.map((a,j)=>j===i?{...a,[k]:e.target.value}:a))}/></td>)}<td>{!locked&&<button aria-label={'Remove '+c.name} onClick={()=>setContacts(contacts.filter((_,j)=>j!==i))}>Remove</button>}</td></tr>)}</tbody></table></div>{!locked&&<button className="button secondary" onClick={()=>setContacts([...contacts,{id:crypto.randomUUID(),role:'Customer PM',company:q.customerOrganisation,name:'',email:'',phone:''}])}>Add stakeholder</button>}<label className="handover-field">Invoice email<input type="email" value={email} disabled={locked} onChange={e=>setEmail(e.target.value)}/></label><label className="handover-field">Sales handover notes<textarea value={notes} disabled={locked} onChange={e=>setNotes(e.target.value)}/></label></section>{data.receipt?<section className="handover-panel"><h2>Received in Workspace</h2><div className="handover-destinations">{[['Sales & Commercial','sales'],['Production','production'],['Project Management','pm']].map(([label,key])=><a className="button primary" key={key} href={data.receipt.links[key]}>{label} ↗</a>)}</div><table><thead><tr><th>INF number</th><th>Infrastructure</th></tr></thead><tbody>{data.receipt.infNumbers.map((i:any)=><tr key={i.number}><td>{i.number}</td><td>{i.model}</td></tr>)}</tbody></table><p>Test acceptance recorded. PandaDoc signing, invoice sending and customer notifications have not been performed.</p></section>:locked?<section className="handover-panel"><h2>Handover saved</h2><p>{data.error||'Ready to send to Workspace.'}</p><button className="button primary" disabled={busy} onClick={()=>send(true)}>Retry handover</button></section>:data.canTest?<section className="handover-panel"><h2>Test acceptance</h2><label className="handover-field">Test quotation PDF<input type="file" accept="application/pdf" onChange={e=>setPDF(e.target.files?.[0]||null)}/></label><label className="handover-check"><input type="checkbox" checked={ack} onChange={e=>setAck(e.target.checked)}/>Use a test acceptance. No customer signature or PandaDoc completion is claimed.</label><button className="button primary" disabled={busy||!pdf||!ack} onClick={()=>send()}>Accept test quote & hand over</button></section>:<section className="handover-panel"><h2>PandaDoc connection pending</h2><p>The accepted-document handover is ready for connection to verified PandaDoc completion.</p></section>}</>}</main>;
++}
+diff --git a/app/api/quotes/[id]/handover/route.ts b/app/api/quotes/[id]/handover/route.ts
+new file mode 100644
+index 0000000..a03d9b7
+--- /dev/null
++++ b/app/api/quotes/[id]/handover/route.ts
+@@ -0,0 +1,7 @@
++import {requireRole} from '@/server/auth';
++import {handle,json,requireSameOrigin} from '@/server/http';
++import {handoffDetails,testAccept,sendHandoff,syncPandaDocCompletion} from '@/server/workspace-handoff';
++export const dynamic='force-dynamic';
++type Context={params:Promise<{id:string}>};
++export function GET(request:Request,ctx:Context){return handle(async()=>{const who=await requireRole();return json(await handoffDetails((await ctx.params).id,new URL(request.url).origin,who.user.id,who.role==='management'));});}
++export function POST(request:Request,ctx:Context){return handle(async()=>{requireSameOrigin(request);const who=await requireRole('management'),id=(await ctx.params).id;await handoffDetails(id,new URL(request.url).origin,who.user.id,true);const form=await request.formData();if(form.get('action')==='sync-pandadoc')return json(await syncPandaDocCompletion(id,String(form.get('documentId')),new URL(request.url).origin,{id:who.user.id,name:who.user.name||who.user.email},JSON.parse(String(form.get('metadata')))));if(form.get('action')==='retry')return json(await sendHandoff(id));const file=form.get('pdf');if(!(file instanceof File))return json({error:'Choose the test quote PDF.'},422);return json(await testAccept(id,new URL(request.url).origin,{id:who.user.id,name:who.user.name||who.user.email},JSON.parse(String(form.get('metadata'))),new Uint8Array(await file.arrayBuffer())));});}
+diff --git a/app/api/workspace-review/route.ts b/app/api/workspace-review/route.ts
+new file mode 100644
+index 0000000..2673ecd
+--- /dev/null
++++ b/app/api/workspace-review/route.ts
+@@ -0,0 +1,3 @@
++export const dynamic='force-dynamic';
++// One-time Parramatta setup has finished. All further actions require staff sign-in.
++export function POST(){return Response.json({error:'Review setup is complete. Use the signed-in CPQ handover page.'},{status:410,headers:{'Cache-Control':'no-store'}});}
+diff --git a/app/components/QuoteBank.tsx b/app/components/QuoteBank.tsx
+index 42103db..614cc56 100644
+--- a/app/components/QuoteBank.tsx
++++ b/app/components/QuoteBank.tsx
+@@ -34,7 +34,7 @@ export default function QuoteBank({quotes,manager,loading,error,link,canCreate,o
+     <div className="card v5-bank-filter"><label className="field"><span><Search size={14}/> Find a quote</span><input value={search} placeholder="Company, project number, quote number or owner" onChange={e=>setSearch(e.target.value)}/></label><label className="field"><span>Status</span><select value={status} onChange={e=>{setStatus(e.target.value);setPage(1);}}><option value="all">All quotes</option><option value="draft">Draft</option><option value="finalised">Finalized</option><option value="signed">Signed</option></select></label><label className="check-label"><input type="checkbox" checked={showDeleted} onChange={event=>{setShowDeleted(event.target.checked);setPage(1);setConfirmDelete('');}}/>Show deleted</label></div>
+     {undo&&<div className="notice" role="status"><span>{undo.number||undo.title} deleted from the bank.</span><button className="button secondary small" disabled={Boolean(busy)} onClick={()=>void trash(undo,true)}><Undo2 size={14}/>Undo</button></div>}
+     {(error||localError)&&<div className="notice error" role="alert">{localError||error}</div>}
+-    {(deletedLoading||loading)?<div className="loading-panel card"><Loader2 className="spin" size={27}/>Loading quotes…</div>:list.length?<div className="card table-scroll"><table className="data-table quotes-table"><thead><tr><th>Quote / company</th>{manager&&<th>Sales owner</th>}<th>Pricing tier</th><th>Additional discount</th><th>Created / validity</th><th>Status</th><th>Actions</th></tr></thead><tbody>{list.map(q=>{const draft=q.status==='draft',superseded=q.status==='superseded';return <tr key={q.id}><td>{showDeleted?<strong className="wf-company-name">{q.customerOrganisation||q.title}</strong>:<button className="table-link wf-company-name" onClick={()=>draft?onEdit(q):onOpen(q)}>{q.customerOrganisation||q.title}</button>}<DivisionBadge divisions={q.divisions}/><span className="cell-note wf-project-number">Project number: {q.projectNumber||'Pending'}</span><span className="cell-note">{q.number||q.id}</span></td>{manager&&<td>{q.ownerName||'—'}</td>}<td><PricingBadge tier={q.pricingTier}/></td><td><DiscountValue value={q.additionalDiscountPercent} amount={q.additionalDiscountAmountEx}/></td><td>{dateLabel(q.createdAt)}{!draft&&<span className="cell-note">Valid until {dateLabel(q.expiresAt)}</span>}</td><td><span className="status-pill">{quoteLifecycleLabels[quoteLifecycle(q)]}</span><span className="cell-note">Revision {q.version||q.revision||1}{superseded?' · Previous revision':''}{showDeleted?' · Deleted':''}</span></td><td><div className="table-actions">{showDeleted?<button className="button secondary small" disabled={Boolean(busy)} onClick={()=>void trash(q,true)}><Undo2 size={14}/>Restore quote</button>:confirmDelete===q.id?<><span>Delete this quote?</span><button className="button danger small" disabled={Boolean(busy)} onClick={()=>void trash(q)}><Trash2 size={14}/>Confirm delete</button><button className="button secondary small" onClick={()=>setConfirmDelete('')}>Cancel</button></>:<>{!draft&&!superseded&&(q.url||q.token)&&<button className="icon-button" aria-label={'Copy link for '+q.number} onClick={()=>onCopy(customerUrl(q))}><Copy size={17}/></button>}{!draft&&<><button className="button secondary small" onClick={()=>onOpen(q)}>View<ArrowRight size={14}/></button><a className="button secondary small" href={'/quotes/'+encodeURIComponent(q.id)+'?print=1'} target="_blank" rel="noopener noreferrer" aria-label={'Print quote '+(q.number||q.title)}><Printer size={14}/>Print quote</a></>}{!superseded&&<button className="button secondary small" onClick={()=>onEdit(q)}>{draft?'Continue draft':'Edit / revise quote'}</button>}<button className="button ghost danger small" disabled={Boolean(busy)} onClick={()=>setConfirmDelete(q.id)}><Trash2 size={14}/>Delete</button></>}</div></td></tr>;})}</tbody></table></div>:<div className="empty-state card"><FileText size={40}/><h2>{showDeleted?'No deleted quotes':records.length?'No quotes match this search.':'Your first formal quote starts with a ballpark.'}</h2><p>{showDeleted?'Deleted records can be restored here.':'Use Refine to formal quote to prepare or save an offer.'}</p></div>}
++    {(deletedLoading||loading)?<div className="loading-panel card"><Loader2 className="spin" size={27}/>Loading quotes…</div>:list.length?<div className="card table-scroll"><table className="data-table quotes-table"><thead><tr><th>Quote / company</th>{manager&&<th>Sales owner</th>}<th>Pricing tier</th><th>Additional discount</th><th>Created / validity</th><th>Status</th><th>Actions</th></tr></thead><tbody>{list.map(q=>{const draft=q.status==='draft',superseded=q.status==='superseded';return <tr key={q.id}><td>{showDeleted?<strong className="wf-company-name">{q.customerOrganisation||q.title}</strong>:<button className="table-link wf-company-name" onClick={()=>draft?onEdit(q):onOpen(q)}>{q.customerOrganisation||q.title}</button>}<DivisionBadge divisions={q.divisions}/><span className="cell-note wf-project-number">Project number: {q.projectNumber||'Pending'}</span><span className="cell-note">{q.number||q.id}</span></td>{manager&&<td>{q.ownerName||'—'}</td>}<td><PricingBadge tier={q.pricingTier}/></td><td><DiscountValue value={q.additionalDiscountPercent} amount={q.additionalDiscountAmountEx}/></td><td>{dateLabel(q.createdAt)}{!draft&&<span className="cell-note">Valid until {dateLabel(q.expiresAt)}</span>}</td><td><span className="status-pill">{q.status==='test_accepted'?'Test accepted':quoteLifecycleLabels[quoteLifecycle(q)]}</span><span className="cell-note">Revision {q.version||q.revision||1}{superseded?' · Previous revision':''}{showDeleted?' · Deleted':''}</span></td><td><div className="table-actions">{showDeleted?<button className="button secondary small" disabled={Boolean(busy)} onClick={()=>void trash(q,true)}><Undo2 size={14}/>Restore quote</button>:confirmDelete===q.id?<><span>Delete this quote?</span><button className="button danger small" disabled={Boolean(busy)} onClick={()=>void trash(q)}><Trash2 size={14}/>Confirm delete</button><button className="button secondary small" onClick={()=>setConfirmDelete('')}>Cancel</button></>:<>{!draft&&!superseded&&(q.url||q.token)&&<button className="icon-button" aria-label={'Copy link for '+q.number} onClick={()=>onCopy(customerUrl(q))}><Copy size={17}/></button>}{!draft&&<><button className="button secondary small" onClick={()=>onOpen(q)}>View<ArrowRight size={14}/></button><a className="button secondary small" href={'/quotes/'+encodeURIComponent(q.id)+'?print=1'} target="_blank" rel="noopener noreferrer" aria-label={'Print quote '+(q.number||q.title)}><Printer size={14}/>Print quote</a><a className="button secondary small" href={"/quotes/"+encodeURIComponent(q.id)+"/handover"}>Workspace handover</a></>}{!superseded&&<button className="button secondary small" onClick={()=>onEdit(q)}>{draft?'Continue draft':'Edit / revise quote'}</button>}<button className="button ghost danger small" disabled={Boolean(busy)} onClick={()=>setConfirmDelete(q.id)}><Trash2 size={14}/>Delete</button></>}</div></td></tr>;})}</tbody></table></div>:<div className="empty-state card"><FileText size={40}/><h2>{showDeleted?'No deleted quotes':records.length?'No quotes match this search.':'Your first formal quote starts with a ballpark.'}</h2><p>{showDeleted?'Deleted records can be restored here.':'Use Refine to formal quote to prepare or save an offer.'}</p></div>}
+     <nav aria-label="Quote bank pages" className="mp-actions"><button className="button secondary" disabled={deletedLoading||page===1} onClick={()=>setPage(p=>p-1)}>Previous</button><span aria-live="polite">Page {page}</span><button className="button secondary" disabled={deletedLoading||!hasMore} onClick={()=>setPage(p=>p+1)}>Next</button></nav>
+   </>;
+ }
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 3e63eb2..876b99b 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -1,3 +1,4 @@
++import "./workspace-handover.css";
+ import type { Metadata } from "next";
+ import "./globals.css";
+ import "./workflow-improvements.css";
+diff --git a/app/public-preview/page.tsx b/app/public-preview/page.tsx
+new file mode 100644
+index 0000000..e455ecc
+--- /dev/null
++++ b/app/public-preview/page.tsx
+@@ -0,0 +1,4 @@
++import CPQApp from '../CPQApp';
++import {requireRole} from '@/server/auth';
++export const dynamic='force-dynamic';
++export default async function Page(){await requireRole();return <CPQApp previewRole="public"/>}
+diff --git a/app/quotes/[id]/handover/page.tsx b/app/quotes/[id]/handover/page.tsx
+new file mode 100644
+index 0000000..61ba69f
+--- /dev/null
++++ b/app/quotes/[id]/handover/page.tsx
+@@ -0,0 +1,4 @@
++import WorkspaceHandover from '@/app/WorkspaceHandover';
++import {requireRole} from '@/server/auth';
++export const dynamic='force-dynamic';
++export default async function Page({params}:{params:Promise<{id:string}>}){await requireRole();return <WorkspaceHandover id={(await params).id}/>}
+diff --git a/app/workspace-handover.css b/app/workspace-handover.css
+new file mode 100644
+index 0000000..fe55e9d
+--- /dev/null
++++ b/app/workspace-handover.css
+@@ -0,0 +1,3 @@
++.handover-shell{max-width:1240px;margin:auto;padding:28px;color:#152229}.handover-shell header,.handover-heading,.handover-row{display:flex;justify-content:space-between;align-items:center;gap:24px}.handover-shell header{padding-bottom:28px;border-bottom:1px solid #dce4e7}.handover-shell nav,.handover-destinations{display:flex;gap:16px;flex-wrap:wrap}.handover-shell nav a{font-size:14px;color:#344b52}.handover-heading{margin:36px 0 28px}.handover-heading span{font-size:11px;letter-spacing:2px;color:#63767d}.handover-heading h1{font-size:34px;margin:8px 0}.handover-heading p{color:#63767d}.handover-panel{background:white;border:1px solid #dce4e7;border-radius:14px;padding:26px;margin:18px 0}.handover-panel h2{font-size:20px;margin:0 0 22px}.handover-status{color:#16765c;background:#eaf6f1;padding:8px 12px;border-radius:30px;font-size:13px}.handover-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:10px 0 28px}.handover-facts label{display:block;color:#687b81;font-size:12px;margin-bottom:6px}.handover-facts strong{font-size:14px}.handover-panel table{width:100%;border-collapse:collapse;margin:16px 0}.handover-panel th,.handover-panel td{text-align:left;padding:12px 8px;border-bottom:1px solid #e6ecee;font-size:13px}.handover-panel th{background:#f4f7f8;color:#53676e}.handover-panel input:not([type=checkbox]),.handover-panel textarea{border:1px solid #cbd7dc;border-radius:7px;padding:10px;font:inherit;width:100%;box-sizing:border-box}.handover-panel input:disabled,.handover-panel textarea:disabled{background:#f5f8f9;color:#34484f;border-color:transparent}.handover-field{display:block;max-width:650px;margin-top:22px;font-size:13px}.handover-field input,.handover-field textarea{display:block;margin-top:8px}.handover-check{display:flex;gap:12px;margin:20px 0;font-size:14px}.handover-error{background:#fff1f0;padding:18px;border-radius:10px;color:#a02e28}.handover-table{overflow:auto}.handover-table input{min-width:120px}.handover-panel p{font-size:14px;color:#65777e;line-height:1.6}@media(max-width:700px){.handover-shell{padding:16px}.handover-facts{grid-template-columns:1fr}.handover-heading,.handover-row{align-items:flex-start;flex-direction:column}.handover-heading h1{font-size:28px}.handover-panel{padding:18px}}
++
++@media print{.no-print{display:none!important}}
+diff --git a/db/schema.ts b/db/schema.ts
+index bf6fd0d..93ba5c8 100644
+--- a/db/schema.ts
++++ b/db/schema.ts
+@@ -76,3 +76,6 @@ export const cpqDocuments = sqliteTable('cpq_documents', {
+   createdAt:text('created_at').notNull(), createdBy:text('created_by').notNull(), updatedAt:text('updated_at').notNull(),
+   approvedAt:text('approved_at'), approvedBy:text('approved_by'), revision:integer('revision').notNull().default(1),
+ }, table=>[uniqueIndex('document_version_unique').on(table.seriesId,table.version),index('documents_updated_idx').on(table.updatedAt)]);
++
++export const cpqWorkspaceReview=sqliteTable('cpq_workspace_review',{fixture:text('fixture').primaryKey(),quoteId:text('quote_id').notNull().unique(),createdAt:text('created_at').notNull()});
++export const cpqWorkspaceHandoffs=sqliteTable('cpq_workspace_handoffs',{quoteId:text('quote_id').primaryKey(),version:integer('version').notNull(),status:text('status').notNull(),packet:text('packet').notNull(),pdfKey:text('pdf_key').notNull(),receipt:text('receipt'),lastError:text('last_error'),createdAt:text('created_at').notNull(),updatedAt:text('updated_at').notNull()});
+diff --git a/drizzle/0004_workspace_handover.sql b/drizzle/0004_workspace_handover.sql
+new file mode 100644
+index 0000000..44c5dd0
+--- /dev/null
++++ b/drizzle/0004_workspace_handover.sql
+@@ -0,0 +1,3 @@
++CREATE TABLE cpq_workspace_review (fixture text PRIMARY KEY NOT NULL, quote_id text NOT NULL UNIQUE, created_at text NOT NULL);
++--> statement-breakpoint
++CREATE TABLE cpq_workspace_handoffs (quote_id text PRIMARY KEY NOT NULL, version integer NOT NULL, status text NOT NULL, packet text NOT NULL, pdf_key text NOT NULL, receipt text, last_error text, created_at text NOT NULL, updated_at text NOT NULL);
+diff --git a/drizzle/meta/_journal.json b/drizzle/meta/_journal.json
+index b170663..80bfb9e 100644
+--- a/drizzle/meta/_journal.json
++++ b/drizzle/meta/_journal.json
+@@ -29,6 +29,13 @@
+       "when": 1793167558827,
+       "tag": "0003_project_numbers_and_bank_trash",
+       "breakpoints": true
++    },
++    {
++      "idx": 4,
++      "version": "6",
++      "when": 1795392000000,
++      "tag": "0004_workspace_handover",
++      "breakpoints": true
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/server/workspace-handoff.ts b/server/workspace-handoff.ts
+new file mode 100644
+index 0000000..c0d39da
+--- /dev/null
++++ b/server/workspace-handoff.ts
+@@ -0,0 +1,97 @@
++import {env} from 'cloudflare:workers';
++import {HttpError} from './http';
++import {staffQuote,createQuote} from './quotes';
++import {readState} from './state';
++import {calculateProject,parseGroups} from './project';
++
++const enc=new TextEncoder(),db=()=>env.DB!;
++export const hash=async(v:string|Uint8Array)=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',typeof v==='string'?enc.encode(v):v as any))).map(x=>x.toString(16).padStart(2,'0')).join('');
++const fixtureKey='parramatta-v1';
++export async function setupActor(request:Request){
++ const secret=(env as any).CPQ_REVIEW_SETUP_SECRET;
++ if((env as any).ENABLE_REVIEW_ACCEPTANCE!=='true'||!secret||request.headers.get('Authorization')!=='Bearer '+secret)throw new HttpError(403,'Review setup is unavailable.');
++ const owner:any=await db().prepare("SELECT * FROM cpq_users WHERE lower(email)=lower(?) AND role='management' AND active=1").bind((env as any).CPQ_OWNER_EMAIL||'').first();
++ if(!owner?.identity_id)throw new HttpError(409,'Open the copied CPQ once with the owner account before review setup.');
++ return {id:owner.identity_id,name:owner.name||owner.email};
++}
++export async function createParramatta(actor:string,origin:string){
++ const old:any=await db().prepare('SELECT quote_id FROM cpq_workspace_review WHERE fixture=?').bind(fixtureKey).first();
++ if(old?.quote_id)return {quote:await staffQuote(old.quote_id,origin,actor,true),reused:true};
++ const state=await readState(),kiosk=state.catalogue.records.find(p=>p.id==='KEPO55PMIF'&&p.active);
++ if(!kiosk)throw new HttpError(409,'The review kiosk SKU is not available in this copied catalogue.');
++ const shared={workflowVersion:12,commercial:'purchase',scope:'SIC',channel:'retail',quantity:1,state:'NSW',postcode:'2150',siteName:'Parramatta review site',siteAddress:'Illustrative review site, Parramatta NSW 2150',paymentSchedule:'80/20',paymentScheduleAutomatic:true,care:'none',warrantyYears:3,workingHours:'BH',cmsMode:'none',commissioningDelivery:'onsite'};
++ const led={...shared,kind:'led',family:'micro',pitch:1.25,widthMm:2400,heightMm:1350,controllerSeries:'VX',redundancy:false,label:'Parramatta LED wall'},unit={...shared,kind:'kiosk',productId:kiosk.id,touchFaces:0,label:'Parramatta digital kiosk'};
++ const groups=parseGroups([{id:'parramatta-led-1',label:led.label,input:led},{id:'parramatta-kiosk-1',label:unit.label,input:unit}]);
++ const calc=calculateProject(groups,state,true),pricing:any=calc.pricing;
++ const result=await createQuote({action:'finalise',title:'Parramatta signage project · REVIEW TEST',customerName:'Alex Example',customerEmail:'alex@example.com',customerOrganisation:'Example Retail',siteName:shared.siteName,siteAddress:shared.siteAddress,validDays:90,mode:'fixed',displayMode:'section_totals',allowScopes:false,options:[{label:'Parramatta combined project',input:led,groups,expectedPricebookVersion:pricing?.pricebookVersion,expectedPricingStamp:pricing?.pricingStamp}]},actor,origin,true);
++ await db().prepare('INSERT INTO cpq_workspace_review (fixture,quote_id,created_at) VALUES (?,?,?)').bind(fixtureKey,result.quote.id,new Date().toISOString()).run();
++ return result;
++}
++export async function handoffDetails(quoteId:string,origin:string,actor:string,management:boolean){
++ const quote:any=await staffQuote(quoteId,origin,actor,management),row:any=await db().prepare('SELECT * FROM cpq_workspace_handoffs WHERE quote_id=?').bind(quoteId).first();
++ const fixture=await db().prepare('SELECT fixture FROM cpq_workspace_review WHERE quote_id=?').bind(quoteId).first();
++ return {quote,reviewTest:!!fixture,canTest:management&&!!fixture&&(env as any).ENABLE_REVIEW_ACCEPTANCE==='true',status:row?.status||'Awaiting acceptance',receipt:row?.receipt?JSON.parse(row.receipt):null,error:row?.last_error||'',metadata:row?.packet?JSON.parse(row.packet).project.payload:null,pandadocConfigured:!!(env as any).PANDADOC_API_KEY};
++}
++export function mapQuote(q:any,metadata:any){
++ const option=q.options[0],leaves=option.groups?.length?option.groups:[option];
++ const entries=leaves.map((leaf:any,i:number)=>{
++  const input=leaf.input,g=leaf.geometry,p=leaf.pricing||{},coverage=p.coverage||{};
++  const line=input.kind==='kiosk'?`${g.family||'Digital'} Digital kiosk`:({micro:'PrecisionMicro',pro:'PrecisionPro',luma:'PrecisionLuma',flex:'PrecisionFlex',durablaze:'DuraBlaze',structura:'StructuraSign'} as any)[input.family]||g.family||input.family;
++  const components=(g.components||g.bom||[]).map((c:any)=>({sku:c.productId||c.id,quantity:c.quantity,role:c.role||'component'}));
++  const cabinetSizes=[...new Set((g.layout||[]).map((c:any)=>c.w&&c.h?c.w+' × '+c.h+' mm':'').filter(Boolean))].join(', ');
++  return {id:leaf.id||'screen-'+i,productLine:line,model:g.name||leaf.label||line,category:input.kind==='kiosk'?'Digital kiosk':'LED videowall',configuration:leaf.label+' · '+(input.kind==='kiosk'?`${g.sizeInches}-inch ${g.orientation}, ${g.faces} face(s)`:`${g.widthMm} × ${g.heightMm} mm · P${input.pitch}`),pixelPitch:input.pitch?String(input.pitch):'',dimensions:`${g.widthMm} × ${g.heightMm} mm`,resolution:g.resolutionW&&g.resolutionH?`${g.resolutionW} × ${g.resolutionH}`:'',cabinetSize:cabinetSizes,cabinetQuantity:g.cabinetCount||'',quotedComponents:components,spares:[],input,geometry:g,quotedCoverage:coverage,quotedContract:p.contract||{},installationIncluded:input.scope==='SIC',commissioningIncluded:['SC','SIC'].includes(input.scope),processorIncluded:components.some((c:any)=>c.role==='controller'),mediaPlayerIncluded:(p.lines||[]).some((l:any)=>/media player|android player|windows player/i.test(l.description||l.name||'')),cmsIncluded:input.cmsMode==='tinnox',touchIncluded:Number(input.touchFaces)>0};
++ });
++ const supply=option.input.scope;
++ const stakeholders=Array.isArray(metadata.stakeholders)?metadata.stakeholders:[];
++ if(!stakeholders.some((c:any)=>c.role==='Commercial contact'&&c.name&&c.email))throw new HttpError(422,'Provide the commercial contact name and email.');
++ if(stakeholders.some((c:any)=>!c.role||!c.name||!c.company||!c.email))throw new HttpError(422,'Each stakeholder needs role, company, name and email.');
++ const warranty=entries.map((e:any)=>Number(e.quotedCoverage.warrantyYears||0)*12),care=entries.map((e:any)=>Number(e.quotedCoverage.careTermYears||0)*12);
++ return {number:q.projectNumber,title:q.title,payload:{customer:q.customerOrganisation,site:q.siteAddress,acceptedReference:q.number,commercialContact:`${q.customerName} · ${q.customerEmail}`,salesperson:metadata.salesperson||'CPQ Sales',entries,supplyModel:({SO:'Supply only',SC:'Supply & commissioning',SIC:'Supply, installation & commissioning'} as any)[supply],...Object.fromEntries(['installationIncluded','commissioningIncluded','processorIncluded','mediaPlayerIncluded','cmsIncluded','touchIncluded'].map(k=>[k,entries.some((e:any)=>e[k])])),stakeholders,invoiceEmail:metadata.invoiceEmail||q.customerEmail,scopeNotes:metadata.scopeNotes||'',warrantyMonths:new Set(warranty).size===1?warranty[0]:'',careMonths:new Set(care).size===1?care[0]:'',carePlan:option.input.care||'none',warrantyTerms:entries.map((e:any)=>e.model+': '+(e.quotedCoverage.warrantyLabel||'See accepted quote')+'; '+[e.quotedCoverage.warrantyCommencement?.label,e.quotedCoverage.warrantyCommencement?.delayRule].filter(Boolean).join('. ')).join('\n'),commercial:{totalEx:option.pricing?.subtotalEx,totalGst:option.pricing?.gst,totalInc:option.pricing?.totalInc,paymentSchedule:option.input.paymentSchedule,contract:option.pricing?.contract,eta:option.pricing?.eta},commercialTiming:['Quoted estimate: '+(option.input.leadTime||'See accepted quotation'),...(option.pricing?.eta?.warnings||[]),...(option.pricing?.installation?.notes||[])].join(' '),estimatedDeliveryDate:option.pricing?.eta?.deliveryDate||'',quotedGeneralTerms:q.generalTerms,quotedLegalReferences:q.legalReferences}};
++}
++export async function testAccept(quoteId:string,origin:string,actor:{id:string;name:string},metadata:any,pdf:Uint8Array){
++ const details=await handoffDetails(quoteId,origin,actor.id,true);
++ if(!details.canTest)throw new HttpError(403,'Test acceptance is restricted to the Parramatta review quote.');
++ if(details.receipt||details.status!=='Awaiting acceptance')return sendHandoff(quoteId);
++ if(pdf.length<100||pdf.length>10000000||new TextDecoder().decode(pdf.slice(0,5))!=='%PDF-')throw new HttpError(422,'Attach the test quotation PDF.');
++ if(metadata.testAcknowledged!==true)throw new HttpError(422,'Confirm this is a test acceptance without a customer signature.');
++ return queueAcceptedQuote(details.quote,origin,actor,metadata,pdf,{mode:'test',at:new Date().toISOString(),actor:actor.name,actorId:actor.id,reason:'User-authorised Parramatta end-to-end review. No customer signature or PandaDoc completion.'});
++}
++export async function queueAcceptedQuote(q:any,origin:string,actor:{id:string;name:string},metadata:any,pdf:Uint8Array,acceptance:any){
++ const sha256=await hash(pdf),acceptedAt=acceptance.at,project=mapQuote(q,metadata);
++ const packet={schema:1,source:{system:'ultimate-cpq-copy',quoteId:q.id,rootQuoteId:q.rootQuoteId||q.id,version:q.version,quoteNumber:q.number,quoteUrl:origin+'/quotes/'+q.id,...(acceptance.mode==='test'?{reviewFixture:fixtureKey}:{})},acceptance,project,document:{sha256,name:q.number+(acceptance.mode==='test'?'-TEST-accepted-quote.pdf':'-signed-quote.pdf')}};
++ const objectKey='workspace-handover/'+q.id+'/'+sha256+'.pdf';if(!env.BUCKET)throw new HttpError(503,'Document storage unavailable.');await env.BUCKET.put(objectKey,pdf,{httpMetadata:{contentType:'application/pdf'}});
++ await db().prepare("INSERT OR IGNORE INTO cpq_workspace_handoffs (quote_id,version,status,packet,pdf_key,created_at,updated_at) VALUES (?,?,'Pending',?,?,?,?)").bind(q.id,q.version,JSON.stringify(packet),objectKey,acceptedAt,acceptedAt).run();
++ await db().prepare("UPDATE cpq_quotes SET status=? WHERE id=? AND status='finalised'").bind(acceptance.mode==='test'?'test_accepted':'signed',q.id).run();
++ return sendHandoff(q.id);
++}
++/** Read-only verification against PandaDoc; this never creates or sends a document. */
++export async function syncPandaDocCompletion(quoteId:string,documentId:string,origin:string,actor:{id:string;name:string},metadata:any){
++ const apiKey=(env as any).PANDADOC_API_KEY;if(!apiKey)throw new HttpError(503,'PandaDoc API connection is not configured.');
++ if(!/^[A-Za-z0-9_-]{10,100}$/.test(documentId))throw new HttpError(422,'Enter a valid PandaDoc document ID.');
++ const details=await handoffDetails(quoteId,origin,actor.id,true);if(details.reviewTest)throw new HttpError(409,'The Parramatta review quote must stay a test acceptance.');
++ if(details.status!=='Awaiting acceptance')return sendHandoff(quoteId);
++ const base='https://api.pandadoc.com/public/v1/documents/'+encodeURIComponent(documentId),headers={Authorization:'API-Key '+apiKey};
++ const check=await fetch(base+'/details',{headers,redirect:'manual',signal:AbortSignal.timeout(20000)});if(!check.ok)throw new HttpError(502,'PandaDoc document verification failed.');const doc:any=await check.json();
++ if(doc.id!==documentId||doc.status!=='document.completed')throw new HttpError(409,'PandaDoc has not completed this document.');
++ if(doc.metadata?.tinnox_quote_id!==quoteId||String(doc.metadata?.tinnox_quote_version)!==String(details.quote.version))throw new HttpError(409,'PandaDoc must reference this exact TINNOX quote ID and revision.');
++ const download=await fetch(base+'/download-protected',{headers,redirect:'manual',signal:AbortSignal.timeout(30000)});if(!download.ok)throw new HttpError(502,'The completed PandaDoc PDF is not ready.');const pdf=new Uint8Array(await download.arrayBuffer());
++ if(pdf.length>10000000||new TextDecoder().decode(pdf.slice(0,5))!=='%PDF-')throw new HttpError(422,'PandaDoc did not return a supported completed PDF.');
++ return queueAcceptedQuote(details.quote,origin,actor,metadata,pdf,{mode:'pandadoc',at:doc.date_completed||new Date().toISOString(),documentId,verifiedAt:new Date().toISOString(),actor:actor.name,actorId:actor.id});
++}
++
++export async function sendHandoff(quoteId:string){
++ const row:any=await db().prepare('SELECT * FROM cpq_workspace_handoffs WHERE quote_id=?').bind(quoteId).first();if(!row)throw new HttpError(409,'Accept the quotation before handover.');
++ if(row.status==='Delivered'&&row.receipt)return JSON.parse(row.receipt);
++ const config=env as any,origin=config.TINNOX_WORKSPACE_ORIGIN,secret=config.CPQ_HANDOVER_SECRET;
++ if(origin!=='https://tinnox-workspace-review.tinnox-4852.chatgpt.site'||!secret||!config.TINNOX_WORKSPACE_SERVICE_TOKEN)throw new HttpError(503,'The Workspace connection is not configured.');
++ try{
++  const pdf=await env.BUCKET!.get(row.pdf_key);if(!pdf)throw Error('Accepted PDF missing.');
++  const bytes=new Uint8Array(await pdf.arrayBuffer());let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.slice(i,i+8192));
++  const packet=JSON.parse(row.packet),raw=JSON.stringify({...packet,document:{...packet.document,base64:btoa(binary)}}),time=String(Date.now());
++  const key=await crypto.subtle.importKey('raw',enc.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
++  const sig=Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,enc.encode(time+'.'+raw)))).map(n=>n.toString(16).padStart(2,'0')).join('');
++  const response=await fetch(origin+'/api/integrations/cpq',{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json','OAI-Sites-Authorization':'Bearer '+config.TINNOX_WORKSPACE_SERVICE_TOKEN,'X-Tinnox-Time':time,'X-Tinnox-Signature':sig},body:raw,signal:AbortSignal.timeout(45000)});
++  const result:any=await response.json();if(!response.ok)throw Error(result.error||'Workspace did not accept the handover.');
++  await db().prepare("UPDATE cpq_workspace_handoffs SET status='Delivered',receipt=?,last_error=NULL,updated_at=? WHERE quote_id=?").bind(JSON.stringify(result),new Date().toISOString(),quoteId).run();return result;
++ }catch(e:any){await db().prepare("UPDATE cpq_workspace_handoffs SET status='Retry required',last_error=?,updated_at=? WHERE quote_id=? AND status<>'Delivered'").bind(String(e.message).slice(0,500),new Date().toISOString(),quoteId).run();throw new HttpError(502,'Handover saved. Retry required: '+String(e.message).slice(0,300));}
++}

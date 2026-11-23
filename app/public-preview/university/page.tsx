@@ -1,0 +1,4 @@
+import {currentMember,WorkError} from '@/lib/server/workspace-store';
+import {copies} from '@/lib/workspace';
+export const dynamic='force-dynamic';
+export default async function Page(){const user=await currentMember();if(user.kind!=='management'&&(user.kind!=='staff'||!user.modules.includes('university')))throw new WorkError('University is outside your module access.',403);return <main className="main-content"><a className="text-button" href="/?module=public-pages">← Workspace</a><section className="panel form-panel"><img src="/tinnox-logo.svg" alt="TINNOX" width="150"/><h1>TINNOX University</h1><p>The separate University copy is available for review. Its customer preview and Workspace sign-in connection will be reviewed with the University module.</p><a className="button secondary" href={copies.university.url} target="_blank" rel="noreferrer">Open University copy ↗</a></section></main>}
